@@ -1,102 +1,106 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
-  <title>About Us | Wehere</title>
-  <!-- Google Fonts & Material Symbols -->
+  <title>Our Story & Founders — Wehere</title>
+  <meta name="description" content="Meet the founding team behind Wehere: Kanishk Kashyap, Nailah Istifa, and Srishti Gautam. Discover our mission to create a compassionate peer sanctuary.">
+  <meta name="theme-color" content="#5E4BEE">
+
+  <!-- Apple Font Preconnect & Lucide Icons -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
-    rel="stylesheet">
-  <!-- Tailwind CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
-            "surface": "#fcf8ff",
-            "on-surface": "#191540",
-            "primary": "#280a80",
-            "primary-container": "#3f2b96",
-            "on-primary": "#ffffff",
-            "on-primary-container": "#c9bfff",
-            "secondary": "#5f5c73",
-            "secondary-container": "#e5dffb",
-            "on-secondary-container": "#656279",
-            "secondary-fixed": "#e5dffb",
-            "secondary-fixed-dim": "#c8c3de",
-            "surface-variant": "#e3dfff",
-            "on-surface-variant": "#484552",
-            "surface-container-lowest": "#ffffff",
-            "surface-container-low": "#f6f2ff",
-            "surface-container": "#f0ebff",
-            "surface-container-high": "#e9e5ff",
-            "surface-container-highest": "#e3dfff",
-            "inverse-surface": "#2e2b56",
-            "inverse-on-surface": "#f3eeff",
-            "inverse-primary": "#c9bfff",
-            "tertiary": "#4e1700",
-            "tertiary-container": "#732500",
-            "on-tertiary-container": "#ff8b5c",
-            "tertiary-fixed": "#ffdbce",
-            "tertiary-fixed-dim": "#ffb599",
-            "on-tertiary-fixed": "#370e00",
-            "outline": "#797584",
-            "outline-variant": "#c9c4d4",
-            "error": "#ba1a1a",
-            "error-container": "#ffdad6",
-            "background": "#fcf8ff",
+            wehere: {
+              purple: "#5E4BEE",
+              purpleHover: "#4E3CCE",
+              purpleLight: "#7A68F8",
+              purpleBg: "#F4F1FE",
+              dark: "#121214",
+              secondary: "#52525B",
+              tertiary: "#71717A",
+              border: "rgba(0, 0, 0, 0.08)",
+              bg: "#FAF9FB",
+              card: "#FFFFFF",
+              amber: "#F59E0B",
+              amberBg: "#FFFBEB",
+              emerald: "#10B981",
+              emeraldBg: "#ECFDF5",
+              rose: "#E11D48",
+              roseBg: "#FFF1F2"
+            }
           },
           fontFamily: {
-            sans: ["DM Sans", "sans-serif"],
-            display: ["Plus Jakarta Sans", "sans-serif"],
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'Inter', 'system-ui', 'sans-serif'],
           },
-          keyframes: {
-            "fade-up": {
-              "0%": { opacity: "0", transform: "translateY(24px)" },
-              "100%": { opacity: "1", transform: "translateY(0)" },
-            },
-          },
-          animation: {
-            "fade-up": "fade-up 0.6s ease-out forwards",
-          },
+          boxShadow: {
+            'bumble-sm': '0 2px 8px -2px rgba(18, 18, 20, 0.04), 0 1px 4px -1px rgba(18, 18, 20, 0.02)',
+            'bumble-md': '0 12px 30px -6px rgba(18, 18, 20, 0.08), 0 4px 12px -2px rgba(18, 18, 20, 0.03)',
+            'bumble-lg': '0 24px 50px -12px rgba(18, 18, 20, 0.12), 0 8px 24px -4px rgba(18, 18, 20, 0.04)',
+            'bumble-purple': '0 16px 36px -6px rgba(94, 75, 238, 0.28)'
+          }
         }
       }
     }
   </script>
+
   <style>
-    .material-symbols-rounded {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      display: inline-block;
-      vertical-align: middle;
-      line-height: 1;
+    :root {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    html {
+      -webkit-tap-highlight-color: transparent;
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #FAF9FB;
+      color: #121214;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif;
+    }
+    button, a, [role="button"], .tappable {
+      touch-action: manipulation;
       user-select: none;
       -webkit-user-select: none;
     }
-
-    .material-symbols-rounded.fill {
-      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    h1, h2, h3, .font-display {
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", Inter, system-ui, sans-serif;
+      letter-spacing: -0.025em;
     }
-
-    /* Safari/WebKit backdrop-filter support */
-    header, .backdrop-blur-xl {
-      -webkit-backdrop-filter: blur(24px);
-      backdrop-filter: blur(24px);
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
-
-    /* Safari touch scrolling */
-    html, body {
-      max-width: 100%;
-      -webkit-overflow-scrolling: touch;
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 0, 0, 0.06);
     }
-
-    /* Progressive Enhancement for Reveal Animations:
-       Default visible so Safari never renders a blank screen */
+    .btn-spring {
+      transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease, box-shadow 150ms ease, color 150ms ease;
+    }
+    .btn-spring:active {
+      transform: scale(0.96);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .btn-spring:hover {
+        transform: translateY(-1px);
+      }
+    }
     .reveal {
       opacity: 1;
       transform: none;
@@ -105,290 +109,370 @@
     @media (prefers-reduced-motion: no-preference) {
       html.js-ready .reveal:not(.visible) {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateY(22px);
       }
       html.js-ready .reveal.visible {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
-    .reveal-delay-1 {
-      transition-delay: 0.1s;
+    #mobile-menu-overlay {
+      transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    .reveal-delay-2 {
-      transition-delay: 0.2s;
+    #mobile-menu-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
     }
   </style>
-  <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
+<body class="overflow-x-hidden selection:bg-wehere-purple selection:text-white antialiased">
 
-<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden">
-
-  <!-- Ambient Background Blobs -->
-  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden" style="-webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0);">
-    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-secondary-fixed/50 blur-[80px] pointer-events-none"></div>
-    <div class="absolute top-1/2 -right-40 w-[600px] h-[600px] rounded-full bg-surface-container-high/60 blur-[90px] pointer-events-none">
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
-  <header
-    class="bg-surface/80 backdrop-blur-xl sticky top-0 z-50 border-b border-outline-variant/20 shadow-[0_4px_24px_-4px_rgba(40,10,128,0.06)]">
-    <div class="flex justify-between items-center w-full px-6 md:px-12 max-w-7xl mx-auto h-16">
-      <a class="flex items-center gap-2.5 active:scale-[0.98] transition-transform" href="index.html">
-        <img src="./assets/logo/icon_logo.png" class="w-9 h-9 object-contain" alt="Wehere Logo">
-        <span class="text-[18px] font-display font-extrabold text-primary tracking-tight">Wehere</span>
+  <!-- ═══════════════════════════ NAVIGATION BAR (ONLY 5 ITEMS) ═══════════════════════════ -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-18 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 btn-spring group py-2" aria-label="Wehere Home">
+        <img src="./assets/logo/icon_logo.png" alt="Wehere Logo" class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl object-contain shadow-bumble-sm group-hover:scale-105 transition-transform duration-300">
+        <span class="font-display text-2xl font-extrabold tracking-tight text-wehere-dark group-hover:text-wehere-purple transition-colors">Wehere</span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7">
-        <a class="text-on-surface-variant font-medium text-sm hover:text-primary transition-colors"
-          href="index.html#how-it-works">How It Works</a>
-        <a class="text-on-surface-variant font-medium text-sm hover:text-primary transition-colors"
-          href="index.html#features">Features</a>
-        <a class="text-primary font-display font-bold text-sm hover:text-primary/70 transition-colors"
-          href="about.html">About Us</a>
-        <a class="text-on-surface-variant font-medium text-sm hover:text-primary transition-colors"
-          href="policies.html">Policies</a>
+      <!-- Desktop Nav (ONLY 5 ITEMS) -->
+      <nav class="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-wehere-secondary">
+        <a href="index.html" class="hover:text-wehere-dark transition-colors py-2">Homepage</a>
+        <a href="index.html#features" class="hover:text-wehere-dark transition-colors py-2">Features</a>
+        <a href="about.html" class="text-wehere-purple font-bold transition-colors py-2">Our Story</a>
+        <a href="index.html#safety" class="hover:text-wehere-dark transition-colors py-2">Safety</a>
+        <a href="index.html#support" class="hover:text-wehere-dark transition-colors py-2">Support</a>
       </nav>
 
-      <div class="hidden md:flex items-center gap-3">
-        <a class="text-sm font-display font-semibold px-5 py-2.5 rounded-full bg-primary-container text-white hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] transition-all"
-          href="index.html#download">
+      <!-- Right Actions -->
+      <div class="flex items-center gap-3">
+        <a href="index.html#download" class="btn-spring inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold bg-wehere-dark text-white hover:bg-black shadow-bumble-sm">
           Get the App
         </a>
+
+        <button id="mobile-menu-toggle" type="button" aria-label="Open Navigation Menu" aria-expanded="false" class="lg:hidden min-w-[44px] min-h-[44px] p-2.5 rounded-full text-wehere-dark hover:bg-black/5 btn-spring flex items-center justify-center">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
       </div>
 
-      <button aria-label="Toggle navigation" class="md:hidden text-primary p-2 rounded-full" id="mobile-menu-btn">
-        <i data-lucide="menu" class="lucide-icon text-2xl"></i>
-      </button>
-    </div>
-
-    <div class="hidden md:hidden px-6 pb-5 pt-2 border-t border-surface-container flex flex-col gap-2" id="mobile-menu">
-      <a class="text-on-surface-variant py-2 text-sm" href="index.html#how-it-works">How It Works</a>
-      <a class="text-on-surface-variant py-2 text-sm" href="index.html#features">Features</a>
-      <a class="text-primary font-bold py-2 text-sm" href="about.html">About Us</a>
-      <a class="text-on-surface-variant py-2 text-sm" href="policies.html">Policies</a>
     </div>
   </header>
 
-  <main class="py-16 md:py-24 px-6 md:px-12 max-w-5xl mx-auto">
-    <div class="text-center mb-20 animate-fade-up">
-      <span
-        class="px-4 py-1.5 rounded-full bg-secondary-container text-primary text-xs font-display font-bold uppercase tracking-wider">Our
-        Story</span>
-      <h1
-        class="font-display text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-on-surface mt-5 leading-tight tracking-tight">
+  <!-- ═══════════════════════════ MOBILE DRAWER (ONLY 5 ITEMS) ═══════════════════════════ -->
+  <div id="mobile-menu-overlay" class="hidden fixed inset-0 z-50 bg-white/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
+    <div class="flex items-center justify-between border-b border-black/[0.06] pb-5">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./assets/logo/icon_logo.png" alt="Wehere Logo" class="w-9 h-9 rounded-2xl object-contain shadow-sm">
+        <span class="font-display text-2xl font-extrabold tracking-tight text-wehere-dark">Wehere</span>
+      </a>
+      <button id="mobile-menu-close" type="button" aria-label="Close Menu" class="min-w-[44px] min-h-[44px] p-2.5 rounded-full bg-black/5 hover:bg-black/10 text-wehere-dark btn-spring flex items-center justify-center">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <nav class="flex flex-col py-8 gap-5">
+      <a href="index.html" class="mobile-nav-link font-display text-2xl sm:text-3xl font-extrabold text-wehere-dark hover:text-wehere-purple transition-colors py-1 flex items-center justify-between">
+        <span>Homepage</span>
+        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wehere-tertiary"></i>
+      </a>
+      <a href="index.html#features" class="mobile-nav-link font-display text-2xl sm:text-3xl font-extrabold text-wehere-dark hover:text-wehere-purple transition-colors py-1 flex items-center justify-between">
+        <span>Features</span>
+        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wehere-tertiary"></i>
+      </a>
+      <a href="about.html" class="mobile-nav-link font-display text-2xl sm:text-3xl font-extrabold text-wehere-purple transition-colors py-1 flex items-center justify-between">
+        <span>Our Story</span>
+        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wehere-purple"></i>
+      </a>
+      <a href="index.html#safety" class="mobile-nav-link font-display text-2xl sm:text-3xl font-extrabold text-wehere-dark hover:text-wehere-purple transition-colors py-1 flex items-center justify-between">
+        <span>Safety</span>
+        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wehere-tertiary"></i>
+      </a>
+      <a href="index.html#support" class="mobile-nav-link font-display text-2xl sm:text-3xl font-extrabold text-wehere-dark hover:text-wehere-purple transition-colors py-1 flex items-center justify-between">
+        <span>Support</span>
+        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wehere-tertiary"></i>
+      </a>
+    </nav>
+
+    <div class="border-t border-black/[0.06] pt-6 flex flex-col gap-4">
+      <a href="index.html#download" class="mobile-nav-link btn-spring w-full py-4 rounded-full bg-wehere-dark text-white font-display font-bold text-center text-base shadow-bumble-md flex items-center justify-center gap-2">
+        <span>Download Wehere Free</span>
+        <i data-lucide="download" class="w-5 h-5"></i>
+      </a>
+      <div class="flex items-center justify-between text-xs text-wehere-tertiary pt-2">
+        <span>Strictly Adults 18+</span>
+        <div class="flex items-center gap-4">
+          <a href="https://www.instagram.com/weherenetwork" target="_blank" rel="noopener noreferrer" class="hover:text-wehere-dark">Instagram</a>
+          <a href="https://m.facebook.com/profile.php?id=61595426812276" target="_blank" rel="noopener noreferrer" class="hover:text-wehere-dark">Facebook</a>
+          <a href="https://youtube.com/@wehereapp" target="_blank" rel="noopener noreferrer" class="hover:text-wehere-dark">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="py-16 sm:py-24 px-5 sm:px-8 lg:px-12 max-w-6xl mx-auto">
+    
+    <!-- Hero Story Banner -->
+    <div class="text-center mb-16 sm:mb-20 reveal max-w-3xl mx-auto">
+      <span class="px-3.5 py-1.5 rounded-full bg-wehere-purpleBg text-wehere-purple text-xs font-bold uppercase tracking-wider border border-wehere-purple/20">
+        Our Story & Leadership
+      </span>
+      <h1 class="font-display text-[clamp(2.4rem,5.5vw,4.25rem)] font-extrabold text-wehere-dark mt-4 leading-tight tracking-tight">
         Connecting Minds.<br>Healing Together.
       </h1>
-      <p class="text-on-surface-variant text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-        Wehere was born from a simple belief: no one should have to struggle silently. Meet the team working to build a
-        world where people help people.
+      <p class="text-wehere-secondary text-base sm:text-lg mt-5 leading-relaxed">
+        Wehere was founded on a simple, enduring conviction: everyday emotional turbulence doesn't always need a clinical label. What a person in quiet struggle needs most is simply someone kind who truly gets it.
       </p>
     </div>
 
-    <div class="space-y-24">
-      <!-- Kanishk -->
-      <div class="flex flex-col md:flex-row gap-10 items-start reveal">
-        <div
-          class="md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left shrink-0 md:sticky top-24 z-10 bg-background md:bg-transparent pb-4 md:pb-0">
-          <div
-            class="w-32 h-32 rounded-full bg-surface-container-high border-4 border-surface shadow-lg flex items-center justify-center text-4xl mb-4 font-display font-bold text-primary">
-            K</div>
-          <h3 class="font-display text-2xl font-bold text-on-surface">Kanishk Kashyap</h3>
-          <p class="text-primary font-display font-semibold mt-1">Director / CEO / Founder</p>
-        </div>
-        <div class="md:w-2/3 space-y-4 text-on-surface-variant leading-relaxed">
-          <p>There was a time in my life when I felt completely alone.</p>
-          <p>I was going through a difficult period, facing things that I didn't always know how to deal with. And
-            during those moments, I realized something that changed the way I looked at people and at the world around
-            me. Sometimes, what a person needs is simply someone who is there.</p>
-          <p>Someone to listen. Someone to understand. Someone to remind them that they are not alone.</p>
-          <p>As I went through my own difficult times, I started observing the world differently. I looked at the people
-            around me and at what was happening in society, and I realized that something needed to change.</p>
-          <p>My life at sea also gave me a completely different perspective. Living and working far from home, spending
-            long periods surrounded by the ocean, and meeting people from different countries and cultures showed me
-            that, despite how different our lives may look, the struggles we carry inside can be remarkably similar.</p>
-          <p>The world is moving faster than ever, but somehow, people are becoming more disconnected from each other.
-            People are struggling silently. People are carrying pain that nobody sees. People need support,
-            understanding and genuine human connection.</p>
-          <p>And I started believing that maybe the solution doesn't always have to come from somewhere outside us.
-            Maybe we need to start helping each other. I believe every person has the ability to make someone else's
-            life a little better. A conversation, a kind word, a few minutes of listening, or simply being present for
-            someone can mean more than we realize.</p>
-          <p>That belief became the foundation of WeHere. I created WeHere with a simple dream: To build a world where
-            people help people.</p>
-          <p class="font-display font-semibold text-primary italic">"Sometimes, peace begins when you know someone is
-            there."</p>
-        </div>
+    <!-- ═══════════════════════════ THE FOUNDING TEAM DETAILS ═══════════════════════════ -->
+    <section class="mb-20">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="px-3.5 py-1 rounded-full bg-white border border-wehere-border text-wehere-purple text-xs font-bold uppercase tracking-wider shadow-sm">
+          The Leadership
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-wehere-dark mt-3 tracking-tight">
+          Meet Our Founders
+        </h2>
+        <p class="text-wehere-secondary text-sm sm:text-base mt-2">
+          The people building a kinder, safer digital sanctuary from Lucknow, India.
+        </p>
       </div>
 
-      <div class="w-full h-px bg-outline-variant/30 reveal"></div>
-
-      <!-- Nailah -->
-      <div class="flex flex-col md:flex-row gap-10 items-start reveal">
-        <div
-          class="md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left shrink-0 md:sticky top-24 z-10 bg-background md:bg-transparent pb-4 md:pb-0">
-          <div
-            class="w-32 h-32 rounded-full bg-surface-container-high border-4 border-surface shadow-lg flex items-center justify-center text-4xl mb-4 font-display font-bold text-primary">
-            N</div>
-          <h3 class="font-display text-2xl font-bold text-on-surface">Nailah Istifa</h3>
-          <p class="text-primary font-display font-semibold mt-1">Co-founder & COO</p>
+      <div class="space-y-8">
+        
+        <!-- Founder 1: Kanishk Kashyap -->
+        <div class="glass-card rounded-[36px] p-8 sm:p-12 shadow-bumble-md flex flex-col md:flex-row gap-8 lg:gap-12 items-start reveal">
+          <div class="md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left shrink-0">
+            <div class="w-24 h-24 rounded-3xl bg-gradient-to-tr from-wehere-purple to-purple-400 text-white shadow-bumble-purple flex items-center justify-center text-3xl font-display font-extrabold mb-4">
+              K
+            </div>
+            <h3 class="font-display text-2xl font-extrabold text-wehere-dark">Kanishk Kashyap</h3>
+            <p class="text-wehere-purple font-display font-bold text-sm mt-0.5">Director, CEO & Founder</p>
+            <div class="mt-3 text-xs text-wehere-tertiary">Product Architecture & Vision • WeHere Networks</div>
+          </div>
+          <div class="md:w-2/3 space-y-4 text-wehere-secondary text-sm sm:text-base leading-relaxed border-t md:border-t-0 md:border-l border-black/[0.06] pt-6 md:pt-0 md:pl-8 lg:pl-10">
+            <p class="font-medium text-wehere-dark italic">
+              "There was a time in my life when I felt completely alone."
+            </p>
+            <p>
+              I was going through a difficult period, facing challenges that I didn't always know how to navigate. And during those moments, I realized something that fundamentally changed how I viewed the world: sometimes, what a person needs is not clinical diagnosis or unsolicited advice. They simply need someone who is there.
+            </p>
+            <p>
+              Traditional social platforms amplify noise, curated vanity, and outrage. We built Wehere as the antidote: a space of quiet psychological safety where you can be real, unburden yourself, and meet peers on the exact same emotional frequency.
+            </p>
+          </div>
         </div>
-        <div class="md:w-2/3 space-y-4 text-on-surface-variant leading-relaxed">
-          <p>One night, while living alone in a city far from my family, I felt like I’d lost myself.</p>
-          <p>I’ve always been an overthinker. Doomscrolling fed it, and with no friends or family nearby, I had no one
-            to say it out loud to. That night I realized the problem wasn’t only the world outside. It was being alone
-            with my thoughts.</p>
-          <p>Most of what weighs on us gets lighter the moment someone says, “I feel that too.”</p>
-          <p>So we built WeHere: a community where people facing similar struggles find each other, talk openly, and
-            feel understood. It isn’t medical treatment. It’s human connection, and a reminder that you’re not alone.
+
+        <!-- Founder 2: Nailah Istifa -->
+        <div class="glass-card rounded-[36px] p-8 sm:p-12 shadow-bumble-md flex flex-col md:flex-row gap-8 lg:gap-12 items-start reveal">
+          <div class="md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left shrink-0">
+            <div class="w-24 h-24 rounded-3xl bg-gradient-to-tr from-amber-500 to-rose-400 text-white shadow-bumble-md flex items-center justify-center text-3xl font-display font-extrabold mb-4">
+              N
+            </div>
+            <h3 class="font-display text-2xl font-extrabold text-wehere-dark">Nailah Istifa</h3>
+            <p class="text-amber-600 font-display font-bold text-sm mt-0.5">Co-founder & COO</p>
+            <div class="mt-3 text-xs text-wehere-tertiary">Operations & Community Safety • WeHere Networks</div>
+          </div>
+          <div class="md:w-2/3 space-y-4 text-wehere-secondary text-sm sm:text-base leading-relaxed border-t md:border-t-0 md:border-l border-black/[0.06] pt-6 md:pt-0 md:pl-8 lg:pl-10">
+            <p class="font-medium text-wehere-dark italic">
+              "One night, while living alone in a city far from home, I felt completely disconnected."
+            </p>
+            <p>
+              I’ve always been an overthinker. Doomscrolling made it worse, and with no friends or family nearby, I had no one to speak openly to. That night I realized the true struggle wasn’t the world outside — it was being trapped alone with spiraling thoughts in the dark.
+            </p>
+            <p>
+              At Wehere, my obsession is user safety and dignity: zero tolerance for harassment, robust hybrid anonymity, and moderation systems that make sure nobody ever feels unsafe while reaching out for support.
+            </p>
+          </div>
+        </div>
+
+        <!-- Founder 3: Srishti Gautam -->
+        <div class="glass-card rounded-[36px] p-8 sm:p-12 shadow-bumble-md flex flex-col md:flex-row gap-8 lg:gap-12 items-start reveal">
+          <div class="md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left shrink-0">
+            <div class="w-24 h-24 rounded-3xl bg-gradient-to-tr from-emerald-500 to-teal-400 text-white shadow-bumble-md flex items-center justify-center text-3xl font-display font-extrabold mb-4">
+              S
+            </div>
+            <h3 class="font-display text-2xl font-extrabold text-wehere-dark">Srishti Gautam</h3>
+            <p class="text-emerald-700 font-display font-bold text-sm mt-0.5">Additional CMO & Grievance Officer</p>
+            <div class="mt-3 text-xs text-wehere-tertiary">Statutory Redressal & Outreach • WeHere Networks</div>
+          </div>
+          <div class="md:w-2/3 space-y-4 text-wehere-secondary text-sm sm:text-base leading-relaxed border-t md:border-t-0 md:border-l border-black/[0.06] pt-6 md:pt-0 md:pl-8 lg:pl-10">
+            <p class="font-medium text-wehere-dark italic">
+              "People carry immense silent pressures in their careers and daily lives."
+            </p>
+            <p>
+              In my work across communities and educational institutions, I constantly see the heavy emotional toll of modern deadlines and isolation. People don't always need therapy; they need authentic connection and a listening ear before burnout becomes a crisis.
+            </p>
+            <p>
+              As Grievance Officer under India IT Rules 2021, I personally oversee our compliance and dispute resolution, guaranteeing that every member's voice and concern is acknowledged within 24 hours.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ OUR CORE ETHICAL COMMITMENTS ═══════════════════════════ -->
+    <section class="space-y-12">
+      <div class="text-center max-w-xl mx-auto">
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-wehere-dark">Our Operating Principles</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card p-8 rounded-[30px]">
+          <div class="w-11 h-11 rounded-2xl bg-wehere-purpleBg text-wehere-purple flex items-center justify-center font-bold text-sm mb-4">
+            01
+          </div>
+          <h3 class="font-display font-bold text-xl text-wehere-dark mb-2">Kindness by Default</h3>
+          <p class="text-sm text-wehere-secondary leading-relaxed">
+            Zero tolerance for creeps, unsolicited dating advances, or invalidating advice. Every conversation begins with our mutual Safe Space Pledge.
           </p>
-          <p class="font-display font-semibold text-primary italic">"No one should have to get through a hard night by
-            themselves."</p>
         </div>
-      </div>
 
-      <div class="w-full h-px bg-outline-variant/30 reveal"></div>
-
-      <!-- Shristi -->
-      <div class="flex flex-col md:flex-row gap-10 items-start reveal">
-        <div
-          class="md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left shrink-0 md:sticky top-24 z-10 bg-background md:bg-transparent pb-4 md:pb-0">
-          <div
-            class="w-32 h-32 rounded-full bg-surface-container-high border-4 border-surface shadow-lg flex items-center justify-center text-4xl mb-4 font-display font-bold text-primary">
-            S</div>
-          <h3 class="font-display text-2xl font-bold text-on-surface">Srishti Gautam</h3>
-          <p class="text-primary font-display font-semibold mt-1">Additional CMO</p>
-        </div>
-        <div class="md:w-2/3 space-y-4 text-on-surface-variant leading-relaxed">
-          <p>As a Relationship & Partnerships Manager at an Ed-Tech organisation, I spend a lot of time understanding
-            people—their aspirations, challenges, and the pressures they carry silently.</p>
-          <p>Through these interactions, I realised how many people struggle with stress, anxiety, loneliness, and
-            emotional overwhelm, yet often don’t know where to turn or feel comfortable asking for help. This made me
-            realise that while we invest heavily in education and professional growth, we often overlook the emotional
-            well-being that helps us truly thrive.</p>
-          <p>That realisation inspired me to create a mental health app that feels like a safe, accessible, and
-            judgment-free space—where people can pause, express themselves, understand their emotions, and find the
-            right support.</p>
-          <p class="font-display font-semibold text-primary italic">"At its heart is a simple belief: no one should have
-            to struggle silently when support can be made easier to reach."</p>
-        </div>
-      </div>
-
-      <div class="w-full h-px bg-outline-variant/30 reveal"></div>
-
-      <!-- Ruchita -->
-      <div class="flex flex-col md:flex-row gap-10 items-start reveal">
-        <div
-          class="md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left shrink-0 md:sticky top-24 z-10 bg-background md:bg-transparent pb-4 md:pb-0">
-          <div
-            class="w-32 h-32 rounded-full bg-surface-container-high border-4 border-surface shadow-lg flex items-center justify-center text-4xl mb-4 font-display font-bold text-primary">
-            R</div>
-          <h3 class="font-display text-2xl font-bold text-on-surface">Ruchita Bhaskar</h3>
-          <p class="text-primary font-display font-semibold mt-1">CTO</p>
-        </div>
-        <div class="md:w-2/3 space-y-4 text-on-surface-variant leading-relaxed">
-          <p>A technology leader passionate about building innovative digital solutions that create meaningful impact.
+        <div class="glass-card p-8 rounded-[30px]">
+          <div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-sm mb-4">
+            02
+          </div>
+          <h3 class="font-display font-bold text-xl text-wehere-dark mb-2">Hybrid Anonymity</h3>
+          <p class="text-sm text-wehere-secondary leading-relaxed">
+            Interact via botanical pseudonym handles. Your real first name stays completely private unless both peers mutually agree to reveal it.
           </p>
-          <p>Leading technology strategy and product development at Wehere, a peer-to-peer mental wellness platform
-            designed to foster emotional connection, encourage self-reflection, and make support more accessible.</p>
-          <p>Focused on creating secure, scalable, and user-centric experiences that combine technology with empathy to
-            promote emotional well-being and meaningful human connections.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-[30px]">
+          <div class="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm mb-4">
+            03
+          </div>
+          <h3 class="font-display font-bold text-xl text-wehere-dark mb-2">Non-Clinical & Ethical</h3>
+          <p class="text-sm text-wehere-secondary leading-relaxed">
+            We never impersonate doctors or therapists. We provide peer support and mindfulness habits while maintaining immediate links to 24/7 national lifelines.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-[30px]">
+          <div class="w-11 h-11 rounded-2xl bg-purple-50 text-wehere-purple flex items-center justify-center font-bold text-sm mb-4">
+            04
+          </div>
+          <h3 class="font-display font-bold text-xl text-wehere-dark mb-2">Privacy & Self-Serve Erasure</h3>
+          <p class="text-sm text-wehere-secondary leading-relaxed">
+            No hardware GPS tracking, automatic EXIF image stripping, and self-serve one-tap complete account deletion under India's DPDP Act 2023.
+          </p>
         </div>
       </div>
-    </div>
+
+      <!-- Corporate Entity & Contact Box -->
+      <div class="glass-card rounded-[36px] p-8 sm:p-12 reveal">
+        <span class="text-xs uppercase font-bold tracking-wider text-wehere-purpleLight">Corporate Entity & Registered Office</span>
+        <h3 class="font-display text-2xl font-bold text-wehere-dark mt-2 mb-4">
+          WeHere Networks Private Limited
+        </h3>
+        <div class="space-y-3 text-sm text-wehere-secondary leading-relaxed max-w-2xl">
+          <p>
+            <strong>Registered Office:</strong> B-2484 Indira Nagar, Lucknow, Uttar Pradesh 226016, India.
+          </p>
+          <p>
+            <strong>Statutory Grievance Redressal Officer:</strong> Srishti Gautam (<a href="mailto:grievance@wehere.co.in" class="text-wehere-purple underline">grievance@wehere.co.in</a>)
+          </p>
+          <p>
+            <strong>Corporate & Partnership Inquiries:</strong> <a href="mailto:contact@weherenetworks.com" class="text-wehere-purple underline">contact@weherenetworks.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-  <footer class="bg-surface-container border-t border-outline-variant/20 mt-12">
-    <div class="w-full px-6 md:px-12 max-w-7xl mx-auto py-14">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10 text-sm">
-        <div class="col-span-2">
-          <div class="flex items-center gap-2 mb-4">
-            <img src="./assets/logo/icon_logo.png" class="w-8 h-8 object-contain" alt="Wehere Logo">
-            <span class="font-display text-lg font-extrabold text-primary">Wehere</span>
+  <footer class="bg-white border-t border-black/[0.06] pt-16 pb-12 text-wehere-secondary text-xs">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div class="col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="./assets/logo/icon_logo.png" class="w-8 h-8 rounded-xl object-contain shadow-sm" alt="Wehere Logo">
+            <span class="font-display font-extrabold text-lg text-wehere-dark">Wehere</span>
           </div>
-          <p class="text-on-surface-variant leading-relaxed max-w-xs mb-4 text-sm">
-            An empathetic, secure peer-support sanctuary. Real people. Real empathy. Zero judgment.
+          <p class="leading-relaxed max-w-sm text-wehere-secondary">
+            Operating Entity: <strong>WeHere Networks Private Limited</strong><br>
+            Registered Office: B-2484 Indira Nagar, Lucknow, Uttar Pradesh 226016, India.
           </p>
-          <div class="flex items-center gap-2">
-            <a aria-label="Facebook"
-              class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center hover:bg-surface-variant transition-colors border border-outline-variant/30 text-primary"
-              href="https://m.facebook.com/profile.php?id=61595426812276" target="_blank" rel="noopener noreferrer">
-              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 320 512">
-                <path
-                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
-              </svg>
-            </a>
-            <a aria-label="Instagram"
-              class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center hover:bg-surface-variant transition-colors border border-outline-variant/30 text-primary"
-              href="https://www.instagram.com/weherenetwork?exln=MThmcjlqMnc0dWFjZg%3D%3D&utm_source=qr" target="_blank"
-              rel="noopener noreferrer">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 448 512">
-                <path
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-              </svg>
-            </a>
-            <a aria-label="YouTube"
-              class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center hover:bg-surface-variant transition-colors border border-outline-variant/30 text-primary"
-              href="https://youtube.com/@wehereapp?si=NT6kDj3Hr7Ufnwb-" target="_blank" rel="noopener noreferrer">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 576 512">
-                <path
-                  d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
-              </svg>
-            </a>
-          </div>
+          <p class="leading-relaxed max-w-sm text-wehere-tertiary">
+            Statutory Grievance Redressal Officer: <strong>Srishti Gautam</strong> (<a href="mailto:grievance@wehere.co.in" class="text-wehere-dark underline hover:text-wehere-purple">grievance@wehere.co.in</a>)
+          </p>
         </div>
 
         <div>
-          <h4 class="font-display font-bold text-primary mb-3">Product</h4>
-          <ul class="space-y-2 text-on-surface-variant">
-            <li><a class="hover:text-primary transition-colors" href="index.html#how-it-works">How It Works</a></li>
-            <li><a class="hover:text-primary transition-colors" href="index.html#features">Features</a></li>
-            <li><a class="hover:text-primary transition-colors" href="index.html#download">Get the App</a></li>
+          <h4 class="font-bold text-wehere-dark mb-3">Pages</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="hover:text-wehere-dark transition-colors">Homepage</a></li>
+            <li><a href="index.html#features" class="hover:text-wehere-dark transition-colors">Features</a></li>
+            <li><a href="about.html" class="text-wehere-purple font-semibold">Our Story</a></li>
+            <li><a href="index.html#safety" class="hover:text-wehere-dark transition-colors">Safety</a></li>
+            <li><a href="index.html#support" class="hover:text-wehere-dark transition-colors">Support</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-display font-bold text-primary mb-3">Company</h4>
-          <ul class="space-y-2 text-on-surface-variant">
-            <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
-            <li><a class="hover:text-primary transition-colors" href="index.html#institutions">Partnerships</a></li>
-            <li><a class="hover:text-primary transition-colors" href="mailto:partnerships@wehere.app">Contact Us</a>
-            </li>
+          <h4 class="font-bold text-wehere-dark mb-3">Company</h4>
+          <ul class="space-y-2.5">
+            <li><a href="about.html" class="hover:text-wehere-dark transition-colors font-medium">About Us & Founders</a></li>
+            <li><a href="mailto:contact@weherenetworks.com" class="hover:text-wehere-dark transition-colors">Contact Support</a></li>
+            <li><a href="crisis-response.html" class="hover:text-wehere-dark transition-colors">Crisis Support Protocol</a></li>
+            <li><a href="index.html#download" class="hover:text-wehere-dark transition-colors">Download App</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-display font-bold text-primary mb-3">Legal & Safety</h4>
-          <ul class="space-y-2 text-on-surface-variant">
-            <li><a class="hover:text-primary transition-colors" href="policies.html">Safety Center</a></li>
-            <li><a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a class="hover:text-primary transition-colors" href="terms-of-service.html">Terms of Service</a></li>
+          <h4 class="font-bold text-wehere-dark mb-3">Legal & Policies</h4>
+          <ul class="space-y-2.5">
+            <li><a href="policies.html" class="hover:text-wehere-dark transition-colors font-semibold">Policies Directory</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-wehere-dark transition-colors">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="hover:text-wehere-dark transition-colors">Terms of Service</a></li>
+            <li><a href="community-guidelines.html" class="hover:text-wehere-dark transition-colors">Community Guidelines</a></li>
+            <li><a href="grievance-redressal.html" class="hover:text-wehere-dark transition-colors">Grievance Redressal</a></li>
+            <li><a href="refund-policy.html" class="hover:text-wehere-dark transition-colors">Refund & Cancellation</a></li>
           </ul>
         </div>
       </div>
 
-      <div
-        class="pt-8 border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between text-xs text-secondary gap-2">
-        <span>© 2026 Wehere. All rights reserved.</span>
-        <span class="flex items-center gap-1.5">
-          <i data-lucide="heart" class="lucide-icon text-sm fill-current text-tertiary-container"></i>
-          Built with care for vulnerable hearts.
-        </span>
+      <div class="border-t border-black/[0.06] pt-8 space-y-3">
+        <p class="text-[11px] leading-relaxed text-wehere-tertiary">
+          <strong>Statutory Platform Disclaimer:</strong> Wehere is a peer emotional support and personal mindfulness platform, not a licensed healthcare provider, medical clinic, or crisis emergency dispatch service. Strictly for adults 18 years of age or older.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-wehere-tertiary text-[11px] pt-2">
+          <span>© 2026 WeHere Networks Private Limited. All rights reserved.</span>
+          <span>A safer space built for empathy and quiet understanding.</span>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Mark JS ready for smooth animations
     document.documentElement.classList.add('js-ready');
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileClose = document.getElementById('mobile-menu-close');
+    const mobileOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-      document.getElementById('mobile-menu')?.classList.toggle('hidden');
-    });
+    function openMobileMenu() {
+      if (!mobileOverlay) return;
+      mobileOverlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMobileMenu() {
+      if (!mobileOverlay) return;
+      mobileOverlay.classList.add('hidden');
+      document.body.style.overflow = '';
+      if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    if (mobileToggle) mobileToggle.addEventListener('click', openMobileMenu);
+    if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
 
     const revealElements = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
@@ -399,26 +483,12 @@
             observer.unobserve(e.target);
           }
         });
-      }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
-
-      revealElements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-          el.classList.add('visible');
-        } else {
-          observer.observe(el);
-        }
-      });
+      }, { threshold: 0.05, rootMargin: '0px 0px 40px 0px' });
+      revealElements.forEach(el => observer.observe(el));
     } else {
       revealElements.forEach(el => el.classList.add('visible'));
     }
 
-    // Fallback safety timeout
-    setTimeout(() => {
-      revealElements.forEach(el => el.classList.add('visible'));
-    }, 1000);
-
-    // Safe Lucide initialization
     function initLucide() {
       if (typeof lucide !== 'undefined' && lucide.createIcons) {
         lucide.createIcons();
@@ -432,5 +502,4 @@
     window.addEventListener('load', initLucide);
   </script>
 </body>
-
 </html>
