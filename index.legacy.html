@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+  <title>WeHere — Find Someone Who Truly Gets It</title>
+  <meta name="description"
+    content="WeHere connects adults (18+) facing burnout, loneliness, anxiety, and life transitions with compassionate peers. A safe, ad-free space for honest conversations and daily mindful habits.">
+  <meta name="theme-color" content="#5E4BEE">
+
+  <!-- Apple Font Preconnect & Lucide Icons -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Outfit:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            wehere: {
+              purple: "#5E4BEE",
+              purpleHover: "#4E3CCE",
+              purpleLight: "#7A68F8",
+              purpleBg: "#F4F1FE",
+              blue: "#378ADD",
+              blueLight: "#38BDF8",
+              dark: "#121214",
+              secondary: "#52525B",
+              tertiary: "#71717A",
+              border: "rgba(0, 0, 0, 0.08)",
+              bg: "#FAF9FB",
+              card: "#FFFFFF",
+              amber: "#F59E0B",
+              amberBg: "#FFFBEB",
+              emerald: "#10B981",
+              emeraldBg: "#ECFDF5",
+              rose: "#E11D48",
+              roseBg: "#FFF1F2"
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'Outfit', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'bumble-sm': '0 2px 8px -2px rgba(18, 18, 20, 0.04), 0 1px 4px -1px rgba(18, 18, 20, 0.02)',
+            'bumble-md': '0 12px 30px -6px rgba(18, 18, 20, 0.08), 0 4px 12px -2px rgba(18, 18, 20, 0.03)',
+            'bumble-lg': '0 24px 50px -12px rgba(18, 18, 20, 0.12), 0 8px 24px -4px rgba(18, 18, 20, 0.04)',
+            'bumble-purple': '0 16px 36px -6px rgba(94, 75, 238, 0.28)',
+            'phone-shadow': '0 30px 70px -15px rgba(18, 18, 20, 0.2), 0 10px 30px -8px rgba(94, 75, 238, 0.12)'
+          },
+          transitionTimingFunction: {
+            'spring': 'cubic-bezier(0.16, 1, 0.3, 1)',
+            'snap': 'cubic-bezier(0.25, 1, 0.5, 1)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Mobile-Native and Apple Design Foundations */
+    :root {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+      -webkit-tap-highlight-color: transparent;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #FAF9FB;
+      color: #121214;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif;
+    }
+
+    button,
+    a,
+    [role="button"],
+    .tappable {
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", Inter, system-ui, sans-serif;
+      letter-spacing: -0.025em;
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .glass-dark {
+      background: rgba(18, 18, 20, 0.92);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-spring {
+      transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease, box-shadow 150ms ease, color 150ms ease;
+    }
+
+    .btn-spring:active {
+      transform: scale(0.96);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .btn-spring:hover {
+        transform: translateY(-1px);
+      }
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-ready .reveal:not(.visible) {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      html.js-ready .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes boxBreath {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(94, 75, 238, 0.2);
+      }
+
+      25% {
+        transform: scale(1.35);
+        box-shadow: 0 0 0 26px rgba(94, 75, 238, 0.18);
+      }
+
+      50% {
+        transform: scale(1.35);
+        box-shadow: 0 0 0 26px rgba(94, 75, 238, 0.28);
+      }
+
+      75% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(94, 75, 238, 0.08);
+      }
+    }
+
+    .breathing-active {
+      animation: boxBreath 16s ease-in-out infinite;
+    }
+
+    #mobile-menu-overlay {
+      transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #mobile-menu-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+    }
+
+    /* Editorial Mindfulness Animations */
+    @keyframes calmBreath {
+
+      0%,
+      100% {
+        transform: translateY(0px) scale(1);
+      }
+
+      50% {
+        transform: translateY(-7px) scale(1.012);
+      }
+    }
+
+    @keyframes ghostDrift {
+
+      0%,
+      100% {
+        transform: translate(0px, 0px) scale(1);
+        opacity: 0.32;
+      }
+
+      50% {
+        transform: translate(-8px, -12px) scale(1.025);
+        opacity: 0.42;
+      }
+    }
+
+    @keyframes liveBeacon {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(94, 75, 238, 0.6);
+      }
+
+      50% {
+        transform: scale(1.15);
+        box-shadow: 0 0 0 8px rgba(94, 75, 238, 0);
+      }
+    }
+
+    @keyframes breathGuideRing {
+
+      0%,
+      100% {
+        transform: scale(0.9);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: scale(1.35);
+        opacity: 0.85;
+      }
+    }
+
+    .animate-calm-breath {
+      animation: calmBreath 8.5s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .animate-ghost-drift {
+      animation: ghostDrift 11s ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+
+    .animate-live-beacon {
+      animation: liveBeacon 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    .animate-breath-guide {
+      animation: breathGuideRing 8s ease-in-out infinite;
+    }
+
+    /* Progress Bar Animation for 3-Option Auto-Switcher */
+    .option-progress-bar {
+      transition: width 4000ms linear;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden selection:bg-wehere-purple selection:text-white antialiased">
+
+  <!-- ═══════════════════════════ EDITORIAL NAVIGATION BAR (MINIMALIST REFERENCE STYLE) ═══════════════════════════ -->
+  <header
+    class="sticky top-0 z-50 bg-[#FAF9FB]/90 backdrop-blur-xl border-b border-black/[0.05] transition-all duration-200">
+    <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 h-20 flex items-center justify-between">
+
+      <!-- Left: Mobile/Desktop Menu & Quick Links -->
+      <div class="flex items-center gap-6">
+        <button id="mobile-menu-toggle" type="button" aria-label="Open Navigation Menu" aria-expanded="false"
+          class="min-w-[42px] min-h-[42px] p-2.5 rounded-full hover:bg-black/5 text-wehere-dark btn-spring flex items-center justify-center">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+        <nav class="hidden md:flex items-center gap-6 text-xs font-semibold tracking-[0.16em] uppercase text-zinc-500">
+          <a href="#features" class="hover:text-wehere-dark transition-colors py-1">Features</a>
+          <span class="text-zinc-300">•</span>
+          <a href="about.html" class="hover:text-wehere-dark transition-colors py-1">Our Story</a>
+        </nav>
+      </div>
+
+      <!-- Center: Refined Editorial Brand Logo -->
+      <a href="index.html" class="flex flex-col items-center group py-2 text-center" aria-label="WeHere Home">
+        <div class="flex items-center gap-2">
+          <img src="./assets/logo/icon_logo.png" alt="WeHere Logo"
+            class="w-7 h-7 rounded-xl object-contain shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <span
+            class="font-display text-xl sm:text-2xl font-black tracking-[-0.03em] text-wehere-dark group-hover:text-wehere-purple transition-colors">WeHere</span>
+        </div>
+        <span
+          class="text-[9px] font-bold tracking-[0.28em] uppercase text-zinc-400 group-hover:text-wehere-purple/80 transition-colors hidden sm:block">Quiet
+          Sanctuary</span>
+      </a>
+
+      <!-- Right: Safety & Get App -->
+      <div class="flex items-center gap-6">
+        <nav class="hidden md:flex items-center gap-6 text-xs font-semibold tracking-[0.16em] uppercase text-zinc-500">
+          <a href="#safety" class="hover:text-wehere-dark transition-colors py-1">Safety</a>
+          <span class="text-zinc-300">•</span>
+          <a href="#support" class="hover:text-wehere-dark transition-colors py-1">Support</a>
+        </nav>
+
+        <a href="#download"
+          class="btn-spring inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-wehere-dark text-white hover:bg-black border border-[#5E4BEE]/25 shadow-sm hover:shadow-[0_4px_20px_rgba(94,75,238,0.25)] transition-all">
+          Get the App
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ BUMBLE-STYLE MOBILE FULLSCREEN DRAWER (EXACTLY 5 ITEMS) ═══════════════════════════ -->
+  <div id="mobile-menu-overlay"
+    class="hidden fixed inset-0 z-50 bg-white/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto">
+
+    <!-- Drawer Header -->
+    <div class="flex items-center justify-between border-b border-black/[0.06] pb-5">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./assets/logo/icon_logo.png" alt="WeHere Logo" class="w-9 h-9 rounded-2xl object-contain shadow-sm">
+        <span class="font-display text-2xl font-extrabold tracking-tight text-wehere-dark">WeHere</span>
+      </a>
+      <button id="mobile-menu-close" type="button" aria-label="Close Menu"
+        class="min-w-[44px] min-h-[44px] p-2.5 rounded-full bg-black/5 hover:bg-black/10 text-wehere-dark btn-spring flex items-center justify-center">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Drawer Navigation Links (EXACTLY 5 ITEMS: Homepage, Features, Our Story, Safety, Support) -->
+    <nav class="flex flex-col py-8 gap-5">
+      <a href="index.html"
+        class="mobile-nav-link font-display text-2xl sm:text-3xl font-extrabold text-wehere-dark hover:text-wehere-purple transition-colors py-1 flex items-center justify-between">
+        <span>Homepage</span>
+        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wehere-tertiary"></i>
+      </a>
+      <a href="#features"
+        class="mobile-nav-link font-display text-2xl sm:text-3xl font-extrabold text-wehere-dark hover:text-wehere-purple transition-colors py-1 flex items-center justify-between">
+        <span>Features</span>
+        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wehere-tertiary"></i>
+      </a>
+      <a href="about.html"
+        class="mobile-nav-link font-display text-2xl sm:text-3xl font-extrabold text-wehere-dark hover:text-wehere-purple transition-colors py-1 flex items-center justify-between">
+        <span>Our Story</span>
+        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wehere-tertiary"></i>
+      </a>
+      <a href="#safety"
+        class="mobile-nav-link font-display text-2xl sm:text-3xl font-extrabold text-wehere-dark hover:text-wehere-purple transition-colors py-1 flex items-center justify-between">
+        <span>Safety</span>
+        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wehere-tertiary"></i>
+      </a>
+      <a href="#support"
+        class="mobile-nav-link font-display text-2xl sm:text-3xl font-extrabold text-wehere-dark hover:text-wehere-purple transition-colors py-1 flex items-center justify-between">
+        <span>Support</span>
+        <i data-lucide="arrow-up-right" class="w-5 h-5 text-wehere-tertiary"></i>
+      </a>
+    </nav>
+
+    <!-- Drawer Footer Actions -->
+    <div class="border-t border-black/[0.06] pt-6 flex flex-col gap-4">
+      <a href="#download"
+        class="mobile-nav-link btn-spring w-full py-4 rounded-full bg-wehere-dark text-white font-display font-bold text-center text-base shadow-bumble-md flex items-center justify-center gap-2">
+        <span>Download WeHere Free</span>
+        <i data-lucide="download" class="w-5 h-5"></i>
+      </a>
+
+      <div class="flex items-center justify-between text-xs text-wehere-tertiary pt-2">
+        <span>Strictly Adults 18+</span>
+        <div class="flex items-center gap-4">
+          <a href="https://www.instagram.com/weherenetwork" target="_blank" rel="noopener noreferrer"
+            class="hover:text-wehere-dark">Instagram</a>
+          <a href="https://m.facebook.com/profile.php?id=61595426812276" target="_blank" rel="noopener noreferrer"
+            class="hover:text-wehere-dark">Facebook</a>
+          <a href="https://youtube.com/@wehereapp" target="_blank" rel="noopener noreferrer"
+            class="hover:text-wehere-dark">YouTube</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════ EDITORIAL HERO SECTION (INSPIRED BY REFERENCE) ═══════════════════════════ -->
+    <section id="hero"
+      class="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-between overflow-hidden bg-[#FAF9FB] select-none pt-4 pb-10 sm:pb-14">
+
+      <!-- 1. Ambient Ethereal Glow with WeHere Logo Colors -->
+      <div class="absolute inset-0 pointer-events-none -z-10 flex items-center justify-center overflow-hidden">
+        <div
+          class="w-[700px] sm:w-[900px] h-[500px] sm:h-[650px] rounded-full bg-gradient-to-tr from-[#5E4BEE]/[0.08] via-[#7F77DD]/[0.05] to-[#378ADD]/[0.07] blur-[110px] transform -translate-y-8">
+        </div>
+        <!-- Very Subtle Top Center Glow -->
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gradient-to-b from-white/90 to-transparent blur-3xl">
+        </div>
+      </div>
+
+      <!-- Main Container with Spacious Perimeter Grid Alignment -->
+      <div
+        class="relative w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 flex-1 flex flex-col justify-between z-10">
+
+        <!-- ═══════════ TOP ROW: Left Tagline & Right Editorial Stacking Words ═══════════ -->
+        <div class="grid grid-cols-2 sm:grid-cols-12 gap-4 items-start pt-3 sm:pt-6 z-20">
+
+          <!-- Top Left: Space for your true self + Logo Accent Bar -->
+          <div class="col-span-1 sm:col-span-6 flex flex-col items-start gap-2.5">
+            <span class="text-[10px] sm:text-xs font-bold tracking-[0.24em] text-zinc-500 uppercase transition-colors">
+              A space for your true self
+            </span>
+            <div
+              class="h-[2px] w-9 sm:w-11 rounded-full bg-gradient-to-r from-[#5E4BEE] via-[#7F77DD] to-[#378ADD] shadow-[0_0_10px_rgba(94,75,238,0.4)]">
+            </div>
+          </div>
+
+          <!-- Top Right: Vertical Editorial Stack (Ref style: СЛУШАТЬ / ПОНИМАТЬ / ПОДДЕРЖИВАТЬ / БЫТЬ РЯДОМ) -->
+          <div class="col-span-1 sm:col-span-6 flex justify-end">
+            <div
+              class="flex flex-col items-end gap-1.5 text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-zinc-400 uppercase">
+              <span class="hover:text-zinc-900 transition-colors cursor-default">Listen</span>
+              <span class="hover:text-zinc-900 transition-colors cursor-default">Understand</span>
+              <span class="hover:text-zinc-900 transition-colors cursor-default">Support</span>
+              <span class="text-[#5E4BEE] font-bold cursor-default flex items-center gap-1.5 group">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#5E4BEE] animate-live-beacon"></span>
+                <span>Be Here</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ═══════════ CENTER COMPOSITION: Bold Low-Opacity Type + Ghost Layer + Crisp Portrait ═══════════ -->
+        <div class="relative w-full my-auto py-8 sm:py-12 md:py-16 flex items-center justify-center overflow-visible"
+          id="hero-interactive-stage">
+
+          <!-- 1. VERY BOLD TYPOGRAPHY IN BACKGROUND WITH LOW OPACITY (Behind the subject) -->
+          <div
+            class="absolute inset-0 flex items-center justify-between pointer-events-none select-none z-0 px-2 sm:px-4 lg:px-8">
+            <!-- WE (Left) -->
+            <div
+              class="font-display font-black text-[22vw] sm:text-[20vw] lg:text-[19vw] leading-none uppercase tracking-tighter text-zinc-900/[0.065] transition-transform duration-700 ease-out"
+              id="hero-bg-text-left">
+              WE
+            </div>
+
+            <!-- HERE (Right, with accented 'E' in logo color gradient like the accented 'A' in the reference) -->
+            <div
+              class="font-display font-black text-[22vw] sm:text-[20vw] lg:text-[19vw] leading-none uppercase tracking-tighter text-zinc-900/[0.065] transition-transform duration-700 ease-out"
+              id="hero-bg-text-right">
+              HER<span
+                class="bg-gradient-to-tr from-[#5E4BEE]/35 via-[#7F77DD]/30 to-[#378ADD]/25 bg-clip-text text-transparent">E</span>
+            </div>
+          </div>
+
+          <!-- 2. GHOSTED / DREAMY DUPLICATE SILHOUETTE (Left side, from Reference Website) -->
+          <div
+            class="absolute left-[2%] sm:left-[10%] lg:left-[15%] top-1/2 -translate-y-1/2 w-[240px] sm:w-[380px] lg:w-[480px] pointer-events-none select-none z-[5] transition-transform duration-1000 ease-out"
+            id="hero-ghost-layer">
+            <img src="./assets/hero-ghost.png" alt=""
+              class="w-full h-auto object-contain animate-ghost-drift filter blur-[1.5px] opacity-40">
+          </div>
+
+          <!-- 3. CRISP FOREGROUND CENTER PORTRAIT -->
+          <div
+            class="relative z-10 w-[270px] sm:w-[400px] lg:w-[500px] mx-auto pointer-events-none select-none transition-transform duration-500 ease-out"
+            id="hero-subject-layer">
+            <img src="./assets/hero-cutout.png" alt="WeHere Hero Sanctuary"
+              class="w-full h-auto object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.06)] animate-calm-breath">
+          </div>
+
+          <!-- Subtle Center Floating Live Badge (Logo colors accent) -->
+          <div class="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 pointer-events-auto">
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-black/[0.05] shadow-[0_4px_16px_rgba(0,0,0,0.03)] text-[10px] sm:text-[11px] font-semibold text-zinc-600 transition-all hover:bg-white hover:shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-gradient-to-r from-[#5E4BEE] to-[#378ADD] animate-pulse"></span>
+              <span>2,840 peers holding space right now</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ═══════════ BOTTOM ROW: Left Quote & CTA Button + Right Philosophy ═══════════ -->
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-end z-20 pt-4 pb-2">
+
+          <!-- Bottom Left: 2-line quote + Minimal CTA Button with Logo Color Accent -->
+          <div class="sm:col-span-6 flex flex-col items-start gap-4 sm:gap-5">
+            <p class="text-xs sm:text-[13px] text-zinc-600 font-normal leading-relaxed max-w-[280px] sm:max-w-[340px]">
+              Sometimes the most important thing is a place to pause and hear yourself.
+            </p>
+
+            <a href="#download"
+              class="btn-spring group inline-flex items-center gap-3.5 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-zinc-900 text-white hover:bg-black text-xs font-semibold tracking-wider uppercase border border-[#5E4BEE]/35 shadow-[0_4px_24px_rgba(94,75,238,0.18)] hover:shadow-[0_8px_32px_rgba(94,75,238,0.35)] transition-all duration-300">
+              <span>Start A Conversation</span>
+              <svg
+                class="w-4 h-4 text-[#7A68F8] group-hover:text-white group-hover:translate-x-1.5 transition-all duration-300"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Bottom Right: Philosophy Statement & Optional Gentle Breath Widget -->
+          <div class="sm:col-span-6 flex flex-col items-start sm:items-end gap-3">
+            <div
+              class="flex items-start gap-2.5 max-w-[290px] sm:max-w-[340px] text-zinc-500 text-xs sm:text-[13px] leading-relaxed">
+              <span class="text-[#5E4BEE] font-bold select-none text-base leading-none">—</span>
+              <p>
+                Here you can be yourself — without pressure, without haste, without a role to play.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Subtle Bottom Grid Divider -->
+      <div class="absolute inset-x-0 bottom-0 h-px bg-black/[0.04]"></div>
+    </section>
+
+    <!-- ═══════════════════════════ 2. FEATURES SECTION (BUMBLE-STYLE SHOWCASE) ═══════════════════════════ -->
+    <section id="features" class="py-16 sm:py-24 lg:py-28 px-5 sm:px-8 lg:px-12 bg-white border-y border-black/[0.06]">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
+          <span
+            class="px-3.5 py-1 rounded-full bg-wehere-purpleBg text-wehere-purple text-xs font-bold uppercase tracking-wider">
+            Features
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-wehere-dark mt-3 tracking-tight">
+            Built for genuine human connection.
+          </h2>
+          <p class="text-wehere-secondary text-base sm:text-lg mt-3 leading-relaxed">
+            Every detail in WeHere is designed with care — free from vanity metrics, social pressure, and algorithmic
+            noise.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- Feature 1: Empathy Discovery -->
+          <div
+            class="glass-card rounded-[32px] p-8 flex flex-col justify-between hover:shadow-bumble-md transition-shadow reveal">
+            <div>
+              <div
+                class="w-14 h-14 rounded-2xl bg-wehere-purpleBg text-wehere-purple flex items-center justify-center mb-6">
+                <i data-lucide="heart" class="w-7 h-7 fill-current"></i>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-wehere-dark mb-3">Match on Shared Experience</h3>
+              <p class="text-sm text-wehere-secondary leading-relaxed mb-6">
+                Discover peers through what they're navigating, not curated photos or popularity. Match percentages
+                reflect shared life situations, communication preferences, and the type of listening you need.
+              </p>
+            </div>
+            <div class="space-y-2.5 pt-4 border-t border-black/[0.04] text-xs font-medium text-wehere-secondary">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> No follower counts or social performance
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Matched by shared experience, not
+                appearance
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 2: Safe Haven Chat -->
+          <div
+            class="glass-card rounded-[32px] p-8 flex flex-col justify-between hover:shadow-bumble-md transition-shadow reveal">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6">
+                <i data-lucide="messages-square" class="w-7 h-7"></i>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-wehere-dark mb-3">Private, Pressure-Free Chat</h3>
+              <p class="text-sm text-wehere-secondary leading-relaxed mb-6">
+                Conversations begin with shared expectations of empathy and kindness. Chat comfortably under a
+                pseudonym, and reveal your real name only if and when both of you decide to.
+              </p>
+            </div>
+            <div class="space-y-2.5 pt-4 border-t border-black/[0.04] text-xs font-medium text-wehere-secondary">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Mutual consent for identity exchange
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> 1-tap silent unmatch & block
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 3: Grounding & Habits -->
+          <div
+            class="glass-card rounded-[32px] p-8 flex flex-col justify-between hover:shadow-bumble-md transition-shadow reveal">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
+                <i data-lucide="sparkles" class="w-7 h-7"></i>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-wehere-dark mb-3">Mindful Grounding & Habits</h3>
+              <p class="text-sm text-wehere-secondary leading-relaxed mb-6">
+                Ground yourself with guided box breathing exercises, track your emotional rhythm with daily mood
+                check-ins, and build habits that support you without guilt on difficult days.
+              </p>
+            </div>
+            <div class="space-y-2.5 pt-4 border-t border-black/[0.04] text-xs font-medium text-wehere-secondary">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Guided box breathing timer
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Gentle, guilt-free daily streaks
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ 3. OUR STORY SECTION (BUMBLE-STYLE BRAND MISSION) ═══════════════════════════ -->
+    <section id="our-story" class="py-16 sm:py-24 lg:py-28 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+        <div class="lg:col-span-6 space-y-6">
+          <span
+            class="px-3.5 py-1 rounded-full bg-wehere-purpleBg text-wehere-purple text-xs font-bold uppercase tracking-wider">
+            Our Story & Leadership
+          </span>
+          <h2
+            class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-wehere-dark tracking-tight leading-[1.08]">
+            An antidote to social media loneliness.
+          </h2>
+          <p class="text-wehere-secondary text-base sm:text-lg leading-relaxed">
+            Most social networks were built to keep you scrolling — optimizing for likes, algorithms, and curated
+            highlights. The result is an unspoken isolation: people surrounded by followers, yet having no one to speak
+            to when life feels heavy.
+          </p>
+          <p class="text-wehere-secondary text-base leading-relaxed">
+            We founded WeHere in Lucknow to change that. We wanted to build a thoughtful space where being honest about
+            your struggles is welcomed, where listening is valued, and where vulnerability is met with quiet
+            understanding.
+          </p>
+
+          <div class="pt-2">
+            <a href="about.html"
+              class="btn-spring inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-wehere-dark text-white hover:bg-black font-display font-bold text-sm shadow-bumble-sm">
+              <span>Read Our Story & Founder Letters</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="relative rounded-[36px] overflow-hidden shadow-bumble-lg border border-black/[0.08] group">
+            <img src="./assets/peer_connection.jpg" alt="Two friends sharing a warm empathetic conversation"
+              class="w-full h-[380px] sm:h-[440px] object-cover group-hover:scale-105 transition-transform duration-700">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-8 sm:p-10">
+              <div class="text-white max-w-md">
+                <span class="text-xs uppercase font-bold tracking-wider text-wehere-purpleLight">Our Philosophy</span>
+                <p class="text-lg sm:text-xl font-bold font-display mt-1.5 leading-snug">
+                  "You don't need a diagnosis to feel overwhelmed. You just need someone who truly listens."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Founding Team Showcase Cards in Our Story Section -->
+      <div class="mt-14 pt-12 border-t border-black/[0.06]">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-xs uppercase font-bold tracking-wider text-wehere-tertiary">Leadership & Vision</span>
+          <h3 class="font-display text-2xl font-bold text-wehere-dark mt-1">Meet the Founding Team</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Founder 1 -->
+          <div class="glass-card rounded-[28px] p-6 shadow-bumble-sm hover:shadow-bumble-md transition-shadow">
+            <div class="flex items-center gap-3.5 mb-3.5">
+              <div
+                class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-wehere-purple to-purple-400 text-white flex items-center justify-center font-display font-extrabold text-lg shadow-bumble-sm">
+                K
+              </div>
+              <div>
+                <h4 class="font-display font-extrabold text-base text-wehere-dark">Kanishk Kashyap</h4>
+                <p class="text-xs font-semibold text-wehere-purple">Director, CEO & Founder</p>
+              </div>
+            </div>
+            <p class="text-xs text-wehere-secondary leading-relaxed italic">
+              "When life gets overwhelming, people don't always need unsolicited advice or clinical analysis. They just
+              need someone who is genuinely there to listen."
+            </p>
+          </div>
+
+          <!-- Founder 2 -->
+          <div class="glass-card rounded-[28px] p-6 shadow-bumble-sm hover:shadow-bumble-md transition-shadow">
+            <div class="flex items-center gap-3.5 mb-3.5">
+              <div
+                class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-rose-400 text-white flex items-center justify-center font-display font-extrabold text-lg shadow-bumble-sm">
+                N
+              </div>
+              <div>
+                <h4 class="font-display font-extrabold text-base text-wehere-dark">Nailah Istifa</h4>
+                <p class="text-xs font-semibold text-amber-600">Co-founder & COO</p>
+              </div>
+            </div>
+            <p class="text-xs text-wehere-secondary leading-relaxed italic">
+              "No one should have to spend long nights overthinking alone. We built WeHere to give people a safe,
+              reassuring place to reach out."
+            </p>
+          </div>
+
+          <!-- Founder 3 -->
+          <div class="glass-card rounded-[28px] p-6 shadow-bumble-sm hover:shadow-bumble-md transition-shadow">
+            <div class="flex items-center gap-3.5 mb-3.5">
+              <div
+                class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 text-white flex items-center justify-center font-display font-extrabold text-lg shadow-bumble-sm">
+                S
+              </div>
+              <div>
+                <h4 class="font-display font-extrabold text-base text-wehere-dark">Srishti Gautam</h4>
+                <p class="text-xs font-semibold text-emerald-700">Additional CMO & Grievance Officer</p>
+              </div>
+            </div>
+            <p class="text-xs text-wehere-secondary leading-relaxed italic">
+              "Therapy is vital, but everyday stress also needs everyday empathy. We are building a space where mutual
+              respect and safety always come first."
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ 4. SAFETY SECTION (SAFETY & VALUES) ═══════════════════════════ -->
+    <section id="safety" class="py-16 sm:py-24 lg:py-28 px-5 sm:px-8 lg:px-12 bg-white border-y border-black/[0.06]">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
+          <span
+            class="px-3.5 py-1 rounded-full bg-wehere-purpleBg text-wehere-purple text-xs font-bold uppercase tracking-wider">
+            Safety & Values
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-wehere-dark mt-3 tracking-tight">
+            A safer, kinder place to talk.
+          </h2>
+          <p class="text-wehere-secondary text-base sm:text-lg mt-3 leading-relaxed">
+            Clear boundaries, thoughtful privacy, and zero compromise on your safety.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+          <!-- Safety 1 -->
+          <div class="glass-card p-7 sm:p-8 rounded-[30px] reveal">
+            <div
+              class="w-12 h-12 rounded-2xl bg-wehere-purpleBg text-wehere-purple flex items-center justify-center mb-5">
+              <i data-lucide="venetian-mask" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-wehere-dark mb-2">Thoughtful Anonymity</h3>
+            <p class="text-sm text-wehere-secondary leading-relaxed">
+              Express yourself using a gentle pseudonym. Your real name, contact number, and personal details stay
+              private, and are only revealed if both peers mutually agree.
+            </p>
+          </div>
+
+          <!-- Safety 2 -->
+          <div class="glass-card p-7 sm:p-8 rounded-[30px] reveal">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5">
+              <i data-lucide="shield-alert" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-wehere-dark mb-2">Strict Conduct Standards</h3>
+            <p class="text-sm text-wehere-secondary leading-relaxed">
+              WeHere is strictly dedicated to mutual emotional support. Romantic solicitations, inappropriate messages,
+              and harassment result in immediate permanent bans.
+            </p>
+          </div>
+
+          <!-- Safety 3 -->
+          <div class="glass-card p-7 sm:p-8 rounded-[30px] reveal">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+              <i data-lucide="user-x" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-wehere-dark mb-2">1-Tap Silent Unmatch</h3>
+            <p class="text-sm text-wehere-secondary leading-relaxed">
+              You remain in complete control of every conversation. Unmatching or blocking is instant and silent — the
+              chat disappears quietly without alerts or conflict.
+            </p>
+          </div>
+
+          <!-- Safety 4 -->
+          <div class="glass-card p-7 sm:p-8 rounded-[30px] reveal">
+            <div class="w-12 h-12 rounded-2xl bg-purple-50 text-wehere-purple flex items-center justify-center mb-5">
+              <i data-lucide="map-pin-off" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-wehere-dark mb-2">No GPS Location Tracking</h3>
+            <p class="text-sm text-wehere-secondary leading-relaxed">
+              We never request device GPS permissions or track your movements. You simply select a broad region from a
+              list so we can offer relevant cultural matching.
+            </p>
+          </div>
+
+          <!-- Safety 5 -->
+          <div class="glass-card p-7 sm:p-8 rounded-[30px] reveal">
+            <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mb-5">
+              <i data-lucide="camera-off" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-wehere-dark mb-2">Automatic Photo Privacy</h3>
+            <p class="text-sm text-wehere-secondary leading-relaxed">
+              Whenever an avatar or image is uploaded, hidden location tags, camera models, and timestamps are
+              automatically stripped before storage to protect your privacy.
+            </p>
+          </div>
+
+          <!-- Safety 6 -->
+          <div class="glass-card p-7 sm:p-8 rounded-[30px] reveal">
+            <div
+              class="w-12 h-12 rounded-2xl bg-wehere-purpleBg text-wehere-purple flex items-center justify-center mb-5">
+              <i data-lucide="trash-2" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-wehere-dark mb-2">Complete Data Deletion</h3>
+            <p class="text-sm text-wehere-secondary leading-relaxed">
+              Your data belongs entirely to you. You can permanently delete your account, messages, and profile directly
+              from app settings at any time with immediate effect.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ 5. SUPPORT SECTION (HELP CENTER & STATUTORY RESOURCES) ═══════════════════════════ -->
+    <section id="support" class="py-16 sm:py-24 lg:py-28 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
+        <span
+          class="px-3.5 py-1 rounded-full bg-wehere-purpleBg text-wehere-purple text-xs font-bold uppercase tracking-wider">
+          Support & Help
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-wehere-dark mt-3 tracking-tight">
+          We’re here to support you.
+        </h2>
+        <p class="text-wehere-secondary text-base sm:text-lg mt-3 leading-relaxed">
+          Whether you need help with your account, have a safety concern, or are looking for urgent crisis resources.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+
+        <!-- Support Card 1: User Care -->
+        <div
+          class="glass-card rounded-[32px] p-8 flex flex-col justify-between hover:shadow-bumble-md transition-shadow">
+          <div>
+            <div
+              class="w-12 h-12 rounded-2xl bg-wehere-purpleBg text-wehere-purple flex items-center justify-center mb-5">
+              <i data-lucide="mail" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-wehere-dark mb-2">User Support</h3>
+            <p class="text-sm text-wehere-secondary leading-relaxed mb-4">
+              Have questions about your account, reporting a concern, or sharing feedback? Our user support team
+              responds within 24 hours.
+            </p>
+          </div>
+          <a href="mailto:contact@weherenetworks.com"
+            class="text-sm font-bold text-wehere-purple underline hover:text-wehere-dark">
+            contact@weherenetworks.com
+          </a>
+        </div>
+
+        <!-- Support Card 2: Grievance Officer -->
+        <div
+          class="glass-card rounded-[32px] p-8 flex flex-col justify-between hover:shadow-bumble-md transition-shadow">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5">
+              <i data-lucide="gavel" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-wehere-dark mb-2">Grievance Redressal</h3>
+            <p class="text-sm text-wehere-secondary leading-relaxed mb-4">
+              Under India's IT Rules 2021, our Grievance Redressal Officer, <strong>Srishti Gautam</strong>, ensures
+              formal grievances are acknowledged within 24 hours.
+            </p>
+          </div>
+          <a href="mailto:grievance@wehere.co.in"
+            class="text-sm font-bold text-amber-700 underline hover:text-wehere-dark">
+            grievance@wehere.co.in
+          </a>
+        </div>
+
+        <!-- Support Card 3: 24/7 Crisis Lifelines -->
+        <div
+          class="glass-card rounded-[32px] p-8 flex flex-col justify-between hover:shadow-bumble-md transition-shadow border-rose-100 bg-rose-50/30">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-5">
+              <i data-lucide="phone-call" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-rose-950 mb-2">24/7 Crisis Helplines</h3>
+            <p class="text-sm text-rose-900/80 leading-relaxed mb-4">
+              WeHere is a peer community, not an emergency clinical service. If you are experiencing acute distress,
+              free professional helplines are available anytime.
+            </p>
+          </div>
+          <div class="space-y-1 text-xs font-bold text-rose-900">
+            <div>India Tele-MANAS: <a href="tel:14416" class="underline">14416</a></div>
+            <div>US/Canada Lifeline: <a href="tel:988" class="underline">988</a></div>
+            <div>National Emergency: <a href="tel:112" class="underline">112</a></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FAQ Accordion within Support -->
+      <div class="max-w-3xl mx-auto space-y-4">
+        <h3 class="font-display text-2xl font-bold text-wehere-dark text-center mb-6">Frequently Asked Questions</h3>
+
+        <!-- FAQ 1 -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-black/[0.06] transition-colors">
+          <button type="button"
+            class="faq-btn w-full px-6 py-4 sm:py-5 flex items-center justify-between text-left font-display text-sm sm:text-base font-bold text-wehere-dark min-h-[48px]">
+            <span>How does anonymity work on WeHere?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-wehere-secondary transition-transform duration-200"></i>
+          </button>
+          <div
+            class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-wehere-secondary leading-relaxed border-t border-black/[0.04] pt-3">
+            WeHere uses <strong>thoughtful anonymity</strong>. When joining, your account is verified to ensure an 18+
+            community. On the platform, you are represented solely by your chosen pseudonym handle (e.g., <code
+              class="bg-black/5 px-1.5 py-0.5 rounded text-wehere-dark font-mono">@gentle_moss</code>). Your real name,
+            contact number, and personal details remain confidential unless both you and your peer mutually agree to
+            share names.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-black/[0.06] transition-colors">
+          <button type="button"
+            class="faq-btn w-full px-6 py-4 sm:py-5 flex items-center justify-between text-left font-display text-sm sm:text-base font-bold text-wehere-dark min-h-[48px]">
+            <span>Is WeHere free to use?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-wehere-secondary transition-transform duration-200"></i>
+          </button>
+          <div
+            class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-wehere-secondary leading-relaxed border-t border-black/[0.04] pt-3">
+            <strong>Yes.</strong> Core peer matching, respectful conversations, daily mood check-ins, and guided
+            breathing exercises are completely free. An optional WeHere Plus subscription is available for members who
+            want enhanced discovery preferences, with all revenue reinvested into safety and community moderation.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-black/[0.06] transition-colors">
+          <button type="button"
+            class="faq-btn w-full px-6 py-4 sm:py-5 flex items-center justify-between text-left font-display text-sm sm:text-base font-bold text-wehere-dark min-h-[48px]">
+            <span>Is WeHere a substitute for professional therapy or medical care?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-wehere-secondary transition-transform duration-200"></i>
+          </button>
+          <div
+            class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-wehere-secondary leading-relaxed border-t border-black/[0.04] pt-3">
+            <strong>No.</strong> WeHere is a peer-to-peer support community, not a clinical healthcare service. We do
+            not provide psychotherapy, medical diagnoses, psychiatric treatment, or crisis emergency intervention. If
+            you are in need of urgent clinical care, please reach out to the crisis lifelines listed above.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-black/[0.06] transition-colors">
+          <button type="button"
+            class="faq-btn w-full px-6 py-4 sm:py-5 flex items-center justify-between text-left font-display text-sm sm:text-base font-bold text-wehere-dark min-h-[48px]">
+            <span>Can I delete my account and data?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-wehere-secondary transition-transform duration-200"></i>
+          </button>
+          <div
+            class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-wehere-secondary leading-relaxed border-t border-black/[0.04] pt-3">
+            Yes. You can delete your account and all associated messages, matches, and data directly within the app
+            settings at any time. Your data is permanently removed in accordance with data privacy laws.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ FINAL DOWNLOAD CTA BANNER ═══════════════════════════ -->
+    <section id="download" class="py-16 sm:py-24 lg:py-28 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+      <div
+        class="glass-card rounded-[40px] p-8 sm:p-14 md:p-18 text-center relative overflow-hidden border border-black/[0.08] shadow-bumble-lg">
+
+        <div class="max-w-xl mx-auto flex flex-col items-center gap-6 relative z-10">
+          <img src="./assets/logo/icon_logo.png" alt="WeHere App Icon"
+            class="w-16 h-16 sm:w-20 sm:h-20 rounded-3xl object-contain shadow-bumble-md">
+
+          <h2
+            class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-wehere-dark tracking-tight leading-[1.08]">
+            Find people who truly get it.
+          </h2>
+
+          <p class="text-wehere-secondary text-base sm:text-lg leading-relaxed max-w-md">
+            Join a warm, respectful community of adults supporting each other through life's ups and downs.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto pt-2">
+            <!-- App Store -->
+            <a href="#"
+              class="btn-spring inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full bg-wehere-dark text-white hover:bg-black shadow-bumble-md w-full sm:w-auto min-h-[48px]">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 384 512" aria-hidden="true">
+                <path
+                  d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 24 184.8 8 273.5q-9 62.1 26.2 144.5A793.6 793.6 0 0 0 90 512c35.6 0 52.5-19.1 92.8-19.1 40 0 55.8 19.1 93.6 19.1 38.3 0 59.6-27.7 85-71.5 28.9-38.3 40.8-73.6 41.3-75.1-37.4-19.1-55.8-51.5-55.8-93.5zM228.6 105.6c23.6-27.5 35.8-59.4 31.6-97.6-32.5 3.1-67.9 26.3-89.2 54.7-22.8 29.3-36.6 62.4-30.8 98 35.3 3.1 66.8-24.1 88.4-55.1z" />
+              </svg>
+              <div class="flex flex-col text-left">
+                <span class="text-[10px] leading-tight font-medium text-white/75">Download on the</span>
+                <span class="text-sm font-bold leading-tight -mt-0.5">App Store</span>
+              </div>
+            </a>
+
+            <!-- Google Play -->
+            <a href="#"
+              class="btn-spring inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full bg-white text-wehere-dark border border-wehere-border hover:border-black/30 shadow-bumble-sm w-full sm:w-auto min-h-[48px]">
+              <svg class="w-6 h-6" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+                <path
+                  d="M25.7 13.9C23.9 15.6 22.9 18 22.9 21.2V490.8C22.9 494 23.9 496.4 25.7 498.1L26.7 499 266 259.7V252.3L26.7 13L25.7 13.9Z"
+                  fill="#2196F3" />
+                <path
+                  d="M345.9 339.7L266 259.7V252.3L345.9 172.3L347.3 173.1L442.2 227C469.3 242.4 469.3 267.6 442.2 283L347.3 338.9L345.9 339.7Z"
+                  fill="#FFC107" />
+                <path d="M345.9 339.7L266 259.7L25.7 498.1C35.5 507.9 52.8 506.7 73.1 495.2L345.9 339.7Z"
+                  fill="#F44336" />
+                <path d="M345.9 172.3L73.1 16.8C52.8 5.3 35.5 4.1 25.7 13.9L266 252.3L345.9 172.3Z" fill="#4CAF50" />
+              </svg>
+              <div class="flex flex-col text-left">
+                <span class="text-[10px] leading-tight font-medium text-wehere-secondary uppercase tracking-wider">Get
+                  it on</span>
+                <span class="text-sm font-bold leading-tight -mt-0.5">Google Play</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="flex flex-wrap justify-center items-center gap-6 text-xs text-wehere-tertiary pt-2">
+            <span>• Free Core Access</span>
+            <span>• Strictly Adults 18+</span>
+            <span>• Private & Secure</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════ BUMBLE-STYLE FOOTER ═══════════════════════════ -->
+  <footer class="bg-white border-t border-black/[0.06] pt-16 pb-12 text-wehere-secondary text-xs">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+
+        <!-- Col 1: Corporate Details -->
+        <div class="col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="./assets/logo/icon_logo.png" class="w-8 h-8 rounded-xl object-contain shadow-sm"
+              alt="WeHere Logo">
+            <span class="font-display font-extrabold text-lg text-wehere-dark">WeHere</span>
+          </div>
+          <p class="leading-relaxed max-w-sm text-wehere-secondary">
+            Operating Entity: <strong>WeHere Networks Private Limited</strong> (CIN: U63122UP2026PTC253594)<br>
+            Registered Office: B-2484 Indira Nagar, Lucknow, Uttar Pradesh 226016, India.<br>
+            Corporate Inquiries: <a href="mailto:contact@weherenetworks.com"
+              class="text-wehere-dark underline hover:text-wehere-purple">contact@weherenetworks.com</a>
+          </p>
+          <p class="leading-relaxed max-w-sm text-wehere-tertiary">
+            Statutory Grievance Redressal Officer: <strong>Srishti Gautam</strong><br>
+            Email: <a href="mailto:grievance@wehere.co.in"
+              class="text-wehere-dark underline hover:text-wehere-purple">grievance@wehere.co.in</a><br>
+            Timelines: Acknowledgment within 24 hours; resolution within 15 days under IT Rules 2021.
+          </p>
+
+          <!-- Social Media Icons -->
+          <div class="flex items-center gap-3 pt-2">
+            <a aria-label="Facebook"
+              class="w-9 h-9 rounded-full bg-wehere-bg border border-wehere-border flex items-center justify-center hover:bg-black/5 transition-colors text-wehere-dark min-w-[36px] min-h-[36px]"
+              href="https://m.facebook.com/profile.php?id=61595426812276" target="_blank" rel="noopener noreferrer">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 320 512">
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
+              </svg>
+            </a>
+            <a aria-label="Instagram"
+              class="w-9 h-9 rounded-full bg-wehere-bg border border-wehere-border flex items-center justify-center hover:bg-black/5 transition-colors text-wehere-dark min-w-[36px] min-h-[36px]"
+              href="https://www.instagram.com/weherenetwork?exln=MThmcjlqMnc0dWFjZg%3D%3D&utm_source=qr" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 448 512">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+              </svg>
+            </a>
+            <a aria-label="YouTube"
+              class="w-9 h-9 rounded-full bg-wehere-bg border border-wehere-border flex items-center justify-center hover:bg-black/5 transition-colors text-wehere-dark min-w-[36px] min-h-[36px]"
+              href="https://youtube.com/@wehereapp?si=NT6kDj3Hr7Ufnwb-" target="_blank" rel="noopener noreferrer">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 576 512">
+                <path
+                  d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation (Mapped to the 5 Core Pages/Sections) -->
+        <div>
+          <h4 class="font-bold text-wehere-dark mb-3">Pages</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="hover:text-wehere-dark transition-colors font-medium">Homepage</a></li>
+            <li><a href="#features" class="hover:text-wehere-dark transition-colors font-medium">Features</a></li>
+            <li><a href="about.html" class="hover:text-wehere-dark transition-colors font-medium">Our Story</a></li>
+            <li><a href="#safety" class="hover:text-wehere-dark transition-colors font-medium">Safety</a></li>
+            <li><a href="#support" class="hover:text-wehere-dark transition-colors font-medium">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Company & Contact -->
+        <div>
+          <h4 class="font-bold text-wehere-dark mb-3">Company</h4>
+          <ul class="space-y-2.5">
+            <li><a href="about.html" class="hover:text-wehere-dark transition-colors">About Us & Founders</a></li>
+            <li><a href="mailto:contact@weherenetworks.com" class="hover:text-wehere-dark transition-colors">Contact
+                Support</a></li>
+            <li><a href="crisis-response.html" class="hover:text-wehere-dark transition-colors">Crisis Support
+                Protocol</a></li>
+            <li><a href="#download" class="hover:text-wehere-dark transition-colors">Download App</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Legal Suite -->
+        <div>
+          <h4 class="font-bold text-wehere-dark mb-3">Legal & Policies</h4>
+          <ul class="space-y-2.5">
+            <li><a href="policies.html" class="hover:text-wehere-dark transition-colors font-semibold">Policies
+                Directory</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-wehere-dark transition-colors">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="hover:text-wehere-dark transition-colors">Terms of Service</a>
+            </li>
+            <li><a href="community-guidelines.html" class="hover:text-wehere-dark transition-colors">Community
+                Guidelines</a></li>
+            <li><a href="grievance-redressal.html" class="hover:text-wehere-dark transition-colors">Grievance
+                Redressal</a></li>
+            <li><a href="refund-policy.html" class="hover:text-wehere-dark transition-colors">Refund & Cancellation</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Quiet Statutory Disclaimer & Copyright Notice -->
+      <div class="border-t border-black/[0.06] pt-8 space-y-3">
+        <p class="text-[11px] leading-relaxed text-wehere-tertiary">
+          <strong>Statutory Platform Disclaimer:</strong> WeHere is a peer emotional support and personal mindfulness
+          platform, not a licensed healthcare provider, medical clinic, or crisis emergency dispatch service.
+          Conversations with peers do not constitute medical advice or psychotherapy. If you are experiencing acute
+          medical or mental health distress, please reach out directly to certified national crisis services: Tele-MANAS
+          (14416 or 1800 891 4416 in India), National Emergency (112), or 988 Lifeline (US/Canada). Strictly for adults
+          18 years of age or older.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-wehere-tertiary text-[11px] pt-2">
+          <span>© 2026 WeHere Networks Private Limited. All rights reserved.</span>
+          <span>A safer space built for empathy and quiet understanding.</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════ INTERACTIVE CLIENT LOGIC ═══════════════════════════ -->
+  <script>
+    document.documentElement.classList.add('js-ready');
+
+    // Mobile Navigation Drawer Toggle
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileClose = document.getElementById('mobile-menu-close');
+    const mobileOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function openMobileMenu() {
+      if (!mobileOverlay) return;
+      mobileOverlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMobileMenu() {
+      if (!mobileOverlay) return;
+      mobileOverlay.classList.add('hidden');
+      document.body.style.overflow = '';
+      if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    if (mobileToggle) mobileToggle.addEventListener('click', openMobileMenu);
+    if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // HERO PARALLAX & MOTION LOGIC
+    // ═══════════════════════════════════════════════════════════════════════
+    const heroStage = document.getElementById('hero');
+    const heroBgLeft = document.getElementById('hero-bg-text-left');
+    const heroBgRight = document.getElementById('hero-bg-text-right');
+    const heroGhost = document.getElementById('hero-ghost-layer');
+    const heroSubject = document.getElementById('hero-subject-layer');
+
+    if (heroStage && window.matchMedia('(pointer: fine)').matches) {
+      let mouseX = 0, mouseY = 0;
+      let targetX = 0, targetY = 0;
+
+      heroStage.addEventListener('mousemove', (e) => {
+        const rect = heroStage.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        // Normalize between -1 and 1
+        targetX = (e.clientX - centerX) / (rect.width / 2);
+        targetY = (e.clientY - centerY) / (rect.height / 2);
+      });
+
+      heroStage.addEventListener('mouseleave', () => {
+        targetX = 0;
+        targetY = 0;
+      });
+
+      function animateParallax() {
+        // Smooth lerp (linear interpolation)
+        mouseX += (targetX - mouseX) * 0.06;
+        mouseY += (targetY - mouseY) * 0.06;
+
+        if (heroBgLeft && heroBgRight) {
+          heroBgLeft.style.transform = `translate(${mouseX * -20}px, ${mouseY * -10}px)`;
+          heroBgRight.style.transform = `translate(${mouseX * -20}px, ${mouseY * -10}px)`;
+        }
+        if (heroGhost) {
+          heroGhost.style.transform = `translate(${mouseX * -32}px, calc(-50% + ${mouseY * -18}px))`;
+        }
+        if (heroSubject) {
+          heroSubject.style.transform = `translate(${mouseX * 14}px, ${mouseY * 8}px)`;
+        }
+
+        requestAnimationFrame(animateParallax);
+      }
+      requestAnimationFrame(animateParallax);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // LEGACY OPTION SWITCHER GUARDS (if present on subpages)
+    // ═══════════════════════════════════════════════════════════════════════
+    const optionButtons = document.querySelectorAll('.hero-option-btn');
+    if (optionButtons && optionButtons.length > 0) {
+      const candidates = [
+        {
+          optionLabel: 'Work Burnout',
+          avatar: 'GM',
+          alias: '@gentle_moss',
+          resonance: '92% Aligned',
+          quote: '"Drained by constant corporate deadlines and screen fatigue. Looking for someone who understands work burnout — honest listening, no unsolicited advice."',
+          tags: ['Work Burnout', 'Career Stress', 'Active Listening']
+        },
+        {
+          optionLabel: 'Life Transitions',
+          avatar: 'QC',
+          alias: '@quiet_compass',
+          resonance: '96% Aligned',
+          quote: '"Relocated to a new city for work and finding it harder to settle in than I expected. Wishing for an empathetic peer to share quiet daily check-ins with."',
+          tags: ['Loneliness', 'Relocation', 'Daily Check-in']
+        },
+        {
+          optionLabel: 'Anxiety & Overthinking',
+          avatar: 'AR',
+          alias: '@amber_river',
+          resonance: '89% Aligned',
+          quote: '"Navigating chronic overthinking and social anxiety. Looking for an understanding accountability partner to practice daily grounding exercises with."',
+          tags: ['Anxiety', 'Grounding', 'Mindful Habits']
+        }
+      ];
+
+      let currentOptionIndex = 0;
+      const progressBar = document.getElementById('option-progress-bar');
+      const cardContainer = document.getElementById('interactive-card');
+      const cardAvatar = document.getElementById('card-avatar');
+      const cardAlias = document.getElementById('card-alias');
+      const cardResonance = document.getElementById('card-resonance');
+      const cardQuote = document.getElementById('card-quote');
+      const cardTags = document.getElementById('card-tags');
+      const cardOptionIndicator = document.getElementById('card-option-indicator');
+      const cardPassBtn = document.getElementById('card-pass-btn');
+      const cardConnectBtn = document.getElementById('card-connect-btn');
+      const matchToast = document.getElementById('match-toast');
+
+      let autoChangeInterval = null;
+      const INTERVAL_MS = 4000;
+
+      function triggerProgressBar() {
+        if (!progressBar) return;
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+        void progressBar.offsetWidth;
+        progressBar.style.transition = `width ${INTERVAL_MS}ms linear`;
+        progressBar.style.width = '100%';
+      }
+
+      function renderOption(index, withAnimation = true) {
+        currentOptionIndex = index;
+        const data = candidates[index];
+        if (!data) return;
+
+        optionButtons.forEach((btn, i) => {
+          if (i === index) {
+            btn.classList.add('active', 'bg-wehere-purpleBg', 'text-wehere-purple', 'border-wehere-purple/25', 'ring-2', 'ring-wehere-purple/20');
+            btn.classList.remove('bg-wehere-bg', 'text-wehere-secondary', 'border-black/[0.04]');
+          } else {
+            btn.classList.remove('active', 'bg-wehere-purpleBg', 'text-wehere-purple', 'border-wehere-purple/25', 'ring-2', 'ring-wehere-purple/20');
+            btn.classList.add('bg-wehere-bg', 'text-wehere-secondary', 'border-black/[0.04]');
+          }
+        });
+
+        if (cardContainer && withAnimation) {
+          cardContainer.style.transform = 'scale(0.98)';
+          cardContainer.style.opacity = '0.7';
+          setTimeout(() => {
+            cardContainer.style.transform = 'scale(1)';
+            cardContainer.style.opacity = '1';
+          }, 120);
+        }
+
+        if (cardOptionIndicator) cardOptionIndicator.textContent = data.optionLabel;
+        if (cardAvatar) cardAvatar.textContent = data.avatar;
+        if (cardAlias) cardAlias.textContent = data.alias;
+        if (cardResonance) cardResonance.textContent = data.resonance;
+        if (cardQuote) cardQuote.textContent = data.quote;
+        if (cardTags) {
+          cardTags.innerHTML = data.tags.map(t => `<span class="px-2.5 py-0.5 rounded-full bg-wehere-purpleBg text-wehere-purple text-[10px] font-semibold">${t}</span>`).join('');
+        }
+        if (matchToast) matchToast.classList.add('hidden');
+        triggerProgressBar();
+      }
+
+      function advanceToNextOption() {
+        const nextIndex = (currentOptionIndex + 1) % candidates.length;
+        renderOption(nextIndex, true);
+      }
+
+      function startAutoChange() {
+        stopAutoChange();
+        triggerProgressBar();
+        autoChangeInterval = setInterval(advanceToNextOption, INTERVAL_MS);
+      }
+
+      function stopAutoChange() {
+        if (autoChangeInterval) {
+          clearInterval(autoChangeInterval);
+          autoChangeInterval = null;
+        }
+      }
+
+      renderOption(0, false);
+      startAutoChange();
+
+      optionButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-index'), 10);
+          renderOption(idx, true);
+          stopAutoChange();
+          setTimeout(startAutoChange, 5000);
+        });
+      });
+
+      if (cardContainer) {
+        cardContainer.addEventListener('mouseenter', stopAutoChange);
+        cardContainer.addEventListener('mouseleave', startAutoChange);
+      }
+      const optionSwitcher = document.getElementById('hero-option-switcher');
+      if (optionSwitcher) {
+        optionSwitcher.addEventListener('mouseenter', stopAutoChange);
+        optionSwitcher.addEventListener('mouseleave', startAutoChange);
+      }
+
+      if (cardPassBtn && cardConnectBtn) {
+        cardPassBtn.addEventListener('click', () => {
+          advanceToNextOption();
+          stopAutoChange();
+          setTimeout(startAutoChange, 5000);
+        });
+
+        cardConnectBtn.addEventListener('click', () => {
+          if (matchToast) matchToast.classList.remove('hidden');
+          stopAutoChange();
+          setTimeout(() => {
+            advanceToNextOption();
+            startAutoChange();
+          }, 1800);
+        });
+      }
+    }
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('[data-lucide="chevron-down"]');
+        const isOpen = !content.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-btn [data-lucide="chevron-down"]').forEach(i => i.style.transform = 'rotate(0deg)');
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Scroll Reveal Observer
+    const revealElements = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px 40px 0px' });
+
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('visible'));
+    }
+
+    setTimeout(() => {
+      revealElements.forEach(el => el.classList.add('visible'));
+    }, 1200);
+
+    // Lucide Icons Initialization
+    function initLucide() {
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initLucide);
+    } else {
+      initLucide();
+    }
+    window.addEventListener('load', initLucide);
+  </script>
+</body>
+
+</html>

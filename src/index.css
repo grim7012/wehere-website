@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAF9FB;
+  color: #121214;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+button, a, [role="button"], .tappable {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+h1, h2, h3, .font-display {
+  font-family: "Plus Jakarta Sans", Outfit, -apple-system, BlinkMacSystemFont, "SF Pro Display", Inter, system-ui, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.glass-dark {
+  background: rgba(18, 18, 20, 0.92);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-spring {
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease, box-shadow 150ms ease, color 150ms ease;
+}
+.btn-spring:active {
+  transform: scale(0.96);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-spring:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Editorial Keyframe Animations */
+@keyframes calmBreath {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-7px) scale(1.012);
+  }
+}
+
+@keyframes ghostDrift {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.32;
+  }
+  50% {
+    transform: translate(-8px, -12px) scale(1.025);
+    opacity: 0.42;
+  }
+}
+
+@keyframes liveBeacon {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(94, 75, 238, 0.6);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 8px rgba(94, 75, 238, 0);
+  }
+}
+
+@keyframes breathGuideRing {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.85;
+  }
+}
+
+.animate-calm-breath {
+  animation: calmBreath 8.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-ghost-drift {
+  animation: ghostDrift 11s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-live-beacon {
+  animation: liveBeacon 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-breath-guide {
+  animation: breathGuideRing 8s ease-in-out infinite;
+}
