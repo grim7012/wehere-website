@@ -23,7 +23,7 @@ export default function About() {
       dept: 'Operations & Community Safety • WeHere Networks',
       quote: '"Living alone in a new city, the hardest part was the quiet."',
       bio: [
-        "I've always had a tendency to overthink. Living alone in a city far from home, there were nights when scrolling through social media only amplified the silence and disconnection. I realized that the hardest part wasn't the external pressure — it was being stuck in a spiral of thoughts with no safe outlet.",
+        "I've always had a tendency to overthink. Living alone in a city far from home, there were nights when scrolling through social media only amplified the silence and disconnection. I realized that the hardest part was not the external pressure, it was being stuck in a spiral of thoughts with no safe outlet.",
         "At WeHere, my priority is making sure our community is genuinely safe and dignified. That means strict conduct standards, thoughtful privacy protections, and responsive moderation so no one ever feels unsafe while reaching out."
       ]
     },
@@ -35,7 +35,7 @@ export default function About() {
       dept: 'Statutory Redressal & Outreach • WeHere Networks',
       quote: '"People carry immense silent pressures in their careers and daily lives."',
       bio: [
-        "Through my work across community initiatives and educational spaces, I constantly see the heavy emotional toll of burnout, modern deadlines, and quiet isolation. Professional mental healthcare is vital, but everyday stress begins much earlier — and what helps early on is having someone safe to talk to.",
+        "Through my work across community initiatives and educational spaces, I constantly see the heavy emotional toll of burnout, modern deadlines, and quiet isolation. Professional mental healthcare is vital, but everyday stress begins much earlier, and what helps early on is having someone safe to talk to.",
         "As WeHere's Grievance Redressal Officer under India's IT Rules 2021, I personally ensure our platform remains accountable, transparent, and trustworthy, with every member concern acknowledged within 24 hours."
       ]
     }
@@ -79,7 +79,7 @@ export default function About() {
           Built by people who understand what it feels like to struggle in silence.
         </h1>
         <p className="text-wehere-secondary text-base sm:text-lg mt-5 leading-relaxed">
-          We founded WeHere on a simple conviction: when life gets heavy, you shouldn't have to carry it alone. Everyday emotional struggles don't always need clinical labels — sometimes what helps most is simply one empathetic person who genuinely listens.
+          We founded WeHere on a simple conviction: when life gets heavy, you shouldn't have to carry it alone. Everyday emotional struggles don't always need clinical labels, and sometimes what helps most is simply one empathetic person who genuinely listens.
         </p>
       </div>
 

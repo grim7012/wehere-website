@@ -33,8 +33,20 @@ export default function Footer() {
               </span>
             </Link>
 
+            <div className="space-y-1">
+              <div className="text-xs font-semibold text-zinc-200">
+                WeHere Networks Private Limited
+              </div>
+              <div className="text-xs text-[#7F77DD] font-medium">
+                Connecting Minds, Healing Together.
+              </div>
+              <div className="text-xs text-zinc-500">
+                Because No One Should Struggle Alone.
+              </div>
+            </div>
+
             <p className="leading-relaxed max-w-sm text-xs sm:text-sm text-zinc-400 font-normal">
-              A peer emotional support and personal mindfulness sanctuary. Connecting adults navigating burnout, anxiety, and life transitions through genuine human empathy.
+              A supportive digital community where individuals connect through shared life challenges and honest conversations, without fear of judgment.
             </p>
 
             <div className="flex items-center gap-4 text-xs font-semibold text-zinc-400 pt-2">
@@ -70,61 +82,61 @@ export default function Footer() {
           {/* Column 2: Platform Navigation (Cols 5-6) */}
           <div className="md:col-span-2 space-y-3">
             <div className="font-mono text-xs uppercase tracking-wider text-white font-bold">
-              Platform
+              Navigation
             </div>
             <ul className="space-y-2.5 text-xs sm:text-sm text-zinc-400">
               <li>
                 <Link to="/" className="hover:text-white transition-colors">
-                  Sanctuary Home
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-white transition-colors">
+                  About Us
                 </Link>
               </li>
               <li>
                 <a href="/#features" className="hover:text-white transition-colors">
-                  Architecture
-                </a>
-              </li>
-              <li>
-                <a href="/#app" className="hover:text-white transition-colors">
-                  Mobile App
+                  Our Community
                 </a>
               </li>
               <li>
                 <a href="/#safety" className="hover:text-white transition-colors">
-                  Safety Protocols
+                  Safety Commitments
                 </a>
               </li>
               <li>
                 <a href="/#support" className="hover:text-white transition-colors">
-                  FAQ &amp; Support
+                  Common Questions
                 </a>
               </li>
               <li>
-                <Link to="/about" className="hover:text-white transition-colors">
-                  Our Story
-                </Link>
+                <a href="mailto:support@wehere.org" className="hover:text-white transition-colors">
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Legal & Statutory Policies (Cols 7-9) */}
+          {/* Column 3: Legal & Compliance (Cols 7-9) */}
           <div className="md:col-span-3 space-y-3">
             <div className="font-mono text-xs uppercase tracking-wider text-white font-bold">
-              Legal &amp; Compliance
+              Legal &amp; Policies
             </div>
             <ul className="space-y-2.5 text-xs sm:text-sm text-zinc-400">
               <li>
                 <Link to="/policies" className="hover:text-[#7F77DD] transition-colors">
-                  Policies Directory
+                  Policies Overview
                 </Link>
               </li>
               <li>
                 <Link to="/privacy-policy" className="hover:text-[#7F77DD] transition-colors">
-                  Privacy Policy (End-to-End)
+                  Privacy Policy
                 </Link>
               </li>
               <li>
                 <Link to="/terms-of-service" className="hover:text-[#7F77DD] transition-colors">
-                  Terms of Service
+                  Terms &amp; Conditions
                 </Link>
               </li>
               <li>
@@ -134,38 +146,47 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/crisis-response" className="hover:text-[#7F77DD] transition-colors">
-                  Crisis Response &amp; Self-Harm Protocol
-                </Link>
-              </li>
-              <li>
-                <Link to="/grievance-redressal" className="hover:text-[#7F77DD] transition-colors">
-                  Grievance Redressal Mechanism
+                  Safety &amp; Crisis Response Policy
                 </Link>
               </li>
               <li>
                 <Link to="/refund-policy" className="hover:text-[#7F77DD] transition-colors">
-                  Refund &amp; Cancellation Policy
+                  Subscription &amp; Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/grievance-redressal" className="hover:text-[#7F77DD] transition-colors">
+                  Grievance Redressal Policy
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: 24/7 Crisis Hotline Directory (Cols 10-12) */}
+          {/* Column 4: Contact & Crisis Support (Cols 10-12) */}
           <div className="md:col-span-3 space-y-3">
             <div className="font-mono text-xs uppercase tracking-wider text-white font-bold flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#5E4BEE]" />
-              <span>24/7 Crisis Directory</span>
+              <span>Let Us Connect</span>
             </div>
 
             <div className="bg-zinc-900/80 rounded-2xl p-4 border border-zinc-800 text-xs space-y-2.5 text-zinc-400">
-              <p className="text-[11px] leading-relaxed">
-                If you are experiencing acute medical distress or suicidal thoughts, connect immediately with certified emergency lines:
-              </p>
+              <div className="space-y-1">
+                <div className="text-zinc-300 font-semibold">General &amp; Support Inquiries:</div>
+                <div className="text-zinc-400 font-mono text-[11px]">support@wehere.org</div>
+              </div>
+
+              <div className="space-y-1 border-t border-zinc-800 pt-2">
+                <div className="text-zinc-300 font-semibold">Grievance Officer:</div>
+                <div className="text-zinc-400 font-mono text-[11px]">grievance@wehere.org</div>
+              </div>
+
               <div className="border-t border-zinc-800 pt-2 space-y-1 font-mono text-[11px]">
-                <div className="text-zinc-200 font-semibold">India: Tele-MANAS (14416 / 112)</div>
-                <div className="text-zinc-200 font-semibold">US &amp; Canada: 988 Lifeline</div>
-                <div className="text-zinc-200 font-semibold">UK: 111 (NHS Mental Health)</div>
-                <div className="text-[#7F77DD] font-semibold pt-0.5">findahelpline.com (Global)</div>
+                <div className="text-zinc-400 font-sans text-[10px] uppercase font-bold tracking-wider">
+                  Emergency Helplines (24/7)
+                </div>
+                <div className="text-zinc-200">India: Tele-MANAS (14416 / 112)</div>
+                <div className="text-zinc-200">US &amp; Canada: 988 Lifeline</div>
+                <div className="text-[#7F77DD]">Global: findahelpline.com</div>
               </div>
             </div>
           </div>
@@ -175,14 +196,14 @@ export default function Footer() {
         {/* Statutory Platform Disclaimer & Copyright */}
         <div className="border-t border-zinc-800/80 pt-8 space-y-4">
           <p className="text-[11px] leading-relaxed text-zinc-500 font-normal">
-            <strong className="text-zinc-400">Statutory Platform Disclaimer:</strong> WeHere is a peer emotional support and personal mindfulness platform, not a licensed healthcare provider, medical clinic, or crisis emergency dispatch service. Conversations with peers do not constitute medical advice, diagnosis, or psychotherapy. If you are experiencing acute medical or mental health distress, please reach out directly to certified national crisis services. Strictly for adults 18 years of age or older.
+            <strong className="text-zinc-400">Statutory Notice:</strong> WeHere is a peer-to-peer support and social connection platform. It is not a substitute for professional mental health care, medical advice, diagnosis, or emergency services. If you or someone you know is experiencing a mental health crisis, please seek immediate assistance from a qualified professional or appropriate emergency service. Strictly for adults 18 years of age or older.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-zinc-500 text-[11px] font-mono pt-2 border-t border-zinc-900">
             <span>© 2026 WeHere Networks Private Limited. All rights reserved.</span>
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              <span>A sanctuary engineered for dignity, empathy, and quiet understanding.</span>
+              <span>Together, let us create a more understanding and connected world.</span>
             </div>
           </div>
         </div>

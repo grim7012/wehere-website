@@ -17,7 +17,7 @@ export default function CTASection() {
         {/* Section Tracker */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wider text-zinc-300">
           <span className="text-[#7F77DD] font-bold">/ 05</span>
-          <span className="uppercase tracking-[0.2em]">Sanctuary Access</span>
+          <span className="uppercase tracking-[0.2em]">Take The First Step</span>
         </div>
 
         {/* Brand App Icon */}
@@ -30,14 +30,14 @@ export default function CTASection() {
           />
         </div>
 
-        {/* Headline */}
+        {/* Headline from Document */}
         <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.08] text-white uppercase">
-          Find People Who Truly Get It.
+          You Are Not Alone. We Are Here.
         </h2>
 
-        {/* Narrative Description */}
+        {/* Narrative Description from Document */}
         <p className="text-zinc-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl font-normal">
-          Start having genuine conversations with peers who listen without judgment. Strictly for adults 18+, free to join, and 100% ad-free.
+          Connecting minds, healing together. Because no one should struggle alone. Join a supportive digital community where your experiences matter and your journey is respected.
         </p>
 
         {/* Official Store Buttons */}
@@ -84,7 +84,7 @@ export default function CTASection() {
         {/* Trust Seal */}
         <div className="flex items-center gap-2.5 text-xs text-zinc-400 font-mono pt-2">
           <span className="w-2 h-2 rounded-full bg-emerald-400" />
-          <span>Strictly Adults 18+ • Zero Ads • End-to-End Cryptography</span>
+          <span>Strictly for adults 18+ • Free to join • 100% ad-free</span>
         </div>
 
       </div>

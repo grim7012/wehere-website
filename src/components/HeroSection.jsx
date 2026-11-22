@@ -17,13 +17,13 @@ export default function HeroSection() {
 
       {/* ═══════════════════════════════════════════════════════════
           MOBILE & SMALL SCREENS (< md):
-          - Girl on extreme right, top clearance so hair is never cut off
-          - Left half: Text & CTA placed in open space, no overlap
-          - Background: Low-opacity "WE HERE"
+          - Warm, human-friendly storytelling
+          - Positioned so the CTA button sits naturally near the curve of her neck
+          - Zero em dashes
       ═══════════════════════════════════════════════════════════ */}
       <div className="relative flex md:hidden h-full w-full z-10 min-h-0 overflow-hidden">
 
-        {/* 1. Background on Left: Enlarged "WE HERE" in Low Opacity */}
+        {/* Background "WE HERE" in Low Opacity */}
         <div className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 flex flex-col pointer-events-none select-none z-0">
           <div className="font-display font-black text-[27vw] sm:text-[24vw] leading-[0.8] uppercase tracking-tighter text-zinc-900/[0.06]">
             WE
@@ -33,15 +33,13 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* 2. Girl on Extreme Right: Top clearance so hair is NOT cut off */}
+        {/* Girl on Extreme Right: Top clearance so hair is intact */}
         <div className="absolute inset-y-0 right-0 h-full w-[65vw] sm:w-[55vw] z-10 pointer-events-none select-none flex items-start justify-end overflow-hidden pt-2">
-          {/* Subtle ghost silhouette behind */}
           <img
             src="/assets/hero-ghost.png"
             alt=""
             className="absolute right-0 top-2 h-[88%] sm:h-[92%] w-auto max-w-none object-contain object-top translate-x-[48%] filter blur-[2px] opacity-20 z-0"
           />
-          {/* Main portrait with half face cut off at right edge, top hair intact */}
           <img
             src="/assets/hero-cutout.png"
             alt="WeHere Hero Sanctuary"
@@ -49,14 +47,14 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* 3. Foreground Left Half: Positioned in open empty space */}
+        {/* Foreground Content: Warm, Empathetic Copy */}
         <div className="relative w-[60vw] sm:w-[52vw] max-w-[320px] h-full flex flex-col justify-center items-start pl-[clamp(1.15rem,4.5vw,2rem)] pr-2 z-20 shrink-0">
 
-          {/* Accent Kicker */}
+          {/* Kicker */}
           <div className="flex items-center gap-1.5 mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#5E4BEE]" />
             <span className="text-[10px] font-bold tracking-[0.2em] text-zinc-400 uppercase">
-              Sanctuary
+              You Are Not Alone
             </span>
           </div>
 
@@ -68,9 +66,9 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          {/* Philosophy Subtext */}
+          {/* Warm Human Subtext */}
           <p className="text-[clamp(0.68rem,2.3vw,0.78rem)] text-zinc-500 leading-relaxed mb-4 max-w-[220px]">
-            Here you can be yourself — without pressure, without haste, without a role to play.
+            Sometimes, all we need is someone who understands. Someone who listens without judgment and reminds us we belong.
           </p>
 
           {/* CTA Button */}
@@ -78,7 +76,7 @@ export default function HeroSection() {
             href="#download"
             className="btn-spring group inline-flex items-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-zinc-900 text-white hover:bg-black text-[11px] sm:text-xs font-semibold tracking-wider uppercase border border-[#5E4BEE]/50 shadow-[0_4px_20px_rgba(94,75,238,0.3)] transition-all duration-300"
           >
-            <span>Start A Conversation</span>
+            <span>Discover WeHere</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#7A68F8] group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
           </a>
 
@@ -88,14 +86,14 @@ export default function HeroSection() {
 
       {/* ═══════════════════════════════════════════════════════════
           DESKTOP & BIGGER SCREENS (md+):
-          - Centered portrait: Natural size, top clearance (NEVER cut off from top)
-          - Left empty space: Headline + bold, commanding CTA button (ZERO overlap)
-          - Right empty space: Philosophy statement (ZERO overlap)
-          - Background: Giant low-opacity "WE HERE" typography
+          - Centered portrait, zero cut-off from top
+          - Left column: Warm, human copy + prominent CTA button
+          - Right column: Heartfelt philosophy
+          - Zero em dashes
       ═══════════════════════════════════════════════════════════ */}
       <div className="hidden md:block relative w-full h-full z-10 min-h-0 overflow-hidden">
 
-        {/* 1. Background Typography: Giant WE HERE */}
+        {/* 1. Background Typography */}
         <div className="absolute inset-0 flex items-center justify-between pointer-events-none select-none z-0 px-6 lg:px-12 xl:px-16">
           <div className="font-display font-black text-[22vw] lg:text-[20vw] leading-none uppercase tracking-tighter text-zinc-900/[0.06]">
             WE
@@ -105,15 +103,13 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* 2. Main Portrait in Center: Top clearance so hair is NEVER cut off */}
+        {/* 2. Main Portrait in Center */}
         <div className="absolute inset-x-0 bottom-0 h-full z-10 flex items-end justify-center pointer-events-none select-none overflow-hidden pb-0">
-          {/* Subtle ghost silhouette behind */}
           <img
             src="/assets/hero-ghost.png"
             alt=""
             className="hidden xl:block absolute left-[12%] bottom-0 h-[68vh] xl:h-[72vh] w-auto object-contain object-bottom filter blur-[2px] opacity-25 z-0"
           />
-          {/* Main Cutout: Sized so top of hair sits comfortably below navbar with ~28-36px breathing room */}
           <img
             src="/assets/hero-cutout.png"
             alt="WeHere Hero Sanctuary"
@@ -121,22 +117,22 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* 3. Foreground Grid: Text & CTA strictly in the left and right empty spaces */}
+        {/* 3. Foreground Content: Left & Right Empty Spaces */}
         <div className="relative w-full max-w-[1560px] mx-auto px-8 lg:px-14 xl:px-20 h-full z-20 pointer-events-none">
           <div className="grid grid-cols-12 h-full items-center">
 
-            {/* LEFT EMPTY SPACE: Headline + Prominent CTA Button (Columns 1 to 4/5) */}
-            <div className="col-span-5 lg:col-span-4 flex flex-col justify-center items-start gap-5 pointer-events-auto z-20">
+            {/* LEFT COLUMN: Headline + Warm Subtext + CTA Button */}
+            <div className="col-span-5 lg:col-span-4 flex flex-col justify-center items-start gap-4 lg:gap-5 pointer-events-auto z-20">
               
-              {/* Kicker Accent */}
+              {/* Kicker */}
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#5E4BEE]" />
                 <span className="text-[11px] font-bold tracking-[0.22em] text-zinc-400 uppercase">
-                  A Space For Your True Self
+                  A Space For Genuine Connection
                 </span>
               </div>
 
-              {/* Headline in Left Empty Space */}
+              {/* Headline */}
               <h1 className="text-xl lg:text-2xl xl:text-3xl font-medium text-zinc-900 leading-[1.22] tracking-tight">
                 Connecting Minds,
                 <br />
@@ -146,27 +142,35 @@ export default function HeroSection() {
                 </span>
               </h1>
 
-              {/* Bold, Commanding CTA Button — impossible to ignore on big screens */}
+              {/* Empathetic Paragraph */}
+              <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed max-w-[340px]">
+                Sometimes, all we need is someone who understands. Someone who listens without judgment and reminds us that we are not alone.
+              </p>
+
+              {/* Bold CTA Button */}
               <a
                 href="#download"
                 className="btn-spring group inline-flex items-center gap-3.5 px-8 lg:px-9 xl:px-10 py-3.5 lg:py-4 xl:py-4.5 rounded-full bg-zinc-900 text-white hover:bg-black text-xs lg:text-sm xl:text-[15px] font-semibold tracking-wider uppercase border-2 border-[#5E4BEE]/45 shadow-[0_8px_32px_rgba(94,75,238,0.28)] hover:shadow-[0_12px_44px_rgba(94,75,238,0.48)] hover:border-[#5E4BEE] transition-all duration-300"
               >
-                <span>Start A Conversation</span>
+                <span>Discover WeHere</span>
                 <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 text-[#7A68F8] group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />
               </a>
 
             </div>
 
-            {/* CENTER (Columns 5 to 8): Empty in foreground so the centered portrait shines completely uninterrupted */}
+            {/* Center Spacer */}
             <div className="hidden lg:block lg:col-span-4" />
 
-            {/* RIGHT EMPTY SPACE: Philosophy Statement (Columns 9 to 12) */}
+            {/* RIGHT COLUMN: Caring Philosophy Note */}
             <div className="col-span-5 lg:col-span-4 col-start-8 lg:col-start-9 flex flex-col justify-center items-end text-right pointer-events-auto z-20">
               <div className="flex flex-col items-end gap-2.5 max-w-[300px] lg:max-w-[340px]">
                 <div className="h-[2px] w-9 rounded-full bg-gradient-to-r from-[#5E4BEE] via-[#7F77DD] to-[#378ADD] shadow-[0_0_10px_rgba(94,75,238,0.3)] mb-1" />
-                <p className="text-xs lg:text-sm xl:text-base text-zinc-500 leading-relaxed font-normal">
-                  Here you can be yourself — without pressure, without haste, without a role to play.
+                <p className="text-xs lg:text-sm xl:text-base text-zinc-600 leading-relaxed font-normal">
+                  Healing begins when we feel heard, understood, and accepted. You are not alone. We are here.
                 </p>
+                <span className="text-[11px] font-mono font-medium text-zinc-400 uppercase tracking-widest pt-1">
+                  WeHere Sanctuary
+                </span>
               </div>
             </div>
 

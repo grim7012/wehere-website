@@ -3,23 +3,23 @@ import React, { useState } from 'react';
 const faqs = [
   {
     q: 'What is WeHere and how does it work?',
-    a: 'WeHere is a peer emotional support and personal wellness sanctuary connecting adults (18+) navigating life challenges such as workplace burnout, loneliness, and life transitions. Instead of appearance-focused profiles or vanity metrics, matches are made through shared life contexts, communication preferences, and the type of listening you need.'
+    a: 'WeHere is a peer emotional support and social connection platform. We bring adults (18+) together based on shared experiences, challenges, and thoughts. Instead of curated photos or popularity metrics, you connect with individuals who truly understand what you are going through, in an environment built on empathy and zero judgment.'
   },
   {
-    q: 'Is WeHere free to join?',
-    a: 'Yes, WeHere is completely free to join and start connecting with peers. We are committed to keeping the core peer connection experience accessible, unmonetized by user data, and 100% ad-free.'
+    q: 'Is WeHere completely free to join?',
+    a: 'Yes, WeHere is completely free to join. We believe everyone deserves access to compassionate listening and meaningful human connection, without advertisements or hidden fees.'
   },
   {
-    q: 'Is WeHere a substitute for therapy or crisis counseling?',
-    a: 'No. WeHere provides empathetic peer holding, not professional medical care, clinical psychotherapy, or psychiatric treatment. If you are experiencing acute distress or self-harm thoughts, please reach out directly to certified emergency lines like Tele-MANAS (14416 in India) or 988 (US/Canada).'
+    q: 'Is WeHere a substitute for clinical therapy?',
+    a: 'No. WeHere is a peer-to-peer support and social connection platform. It is not a substitute for professional mental health care, medical advice, diagnosis, or emergency services. If you or someone you know is in crisis, please seek immediate assistance from a qualified professional or emergency service such as Tele-MANAS (14416 in India) or 988 (US and Canada).'
   },
   {
-    q: 'How does WeHere protect my privacy and anonymity?',
-    a: 'You create an account and chat under a chosen pseudonym. Your phone number, email, and location are never exposed to other peers. Real personal identity exchange is strictly gated by bilateral, double opt-in consent.'
+    q: 'How is my personal privacy protected?',
+    a: 'We deeply respect your privacy. You have full control over how you present yourself, with the freedom to participate under a pseudonym. Your personal contact details are never shared publicly, and you only share what feels comfortable to you.'
   },
   {
-    q: 'What happens if someone makes me feel uncomfortable?',
-    a: 'You can unmatch or block any user with a single tap at any time. When you unmatch someone, the conversation immediately disappears for both participants, and they can no longer contact you. Ephemeral logs are purged permanently from our servers.'
+    q: 'What happens if a conversation makes me uncomfortable?',
+    a: 'Your comfort and peace of mind always come first. You can quietly unmatch or block any individual with a single tap, with no notifications sent to them. You can also report inappropriate behavior directly through our reporting mechanisms.'
   }
 ];
 
@@ -49,22 +49,22 @@ export default function FAQSection() {
 
           <div className="flex items-center gap-3 text-zinc-500 font-mono text-[11px]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#5E4BEE]" />
-            <span>Clear &amp; Transparent</span>
+            <span>Always Clear &amp; Open</span>
             <span className="text-zinc-400 font-light">+</span>
           </div>
         </div>
 
-        {/* ── MAIN CONTENT GRID: Left Title/Contact + Right Accordion ── */}
+        {/* ── MAIN CONTENT GRID ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-start">
 
-          {/* LEFT COLUMN: Editorial Title & Help Card */}
+          {/* LEFT COLUMN: Warm Headline & Contact Card */}
           <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between items-start pr-0 lg:pr-6">
             <div className="max-w-[440px]">
               <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-[2.65rem] xl:text-5xl uppercase tracking-tight text-zinc-900 leading-[1.08] mb-5 sm:mb-6">
-                Transparent Answers For Your Peace Of Mind
+                Everything You Need To Know
               </h2>
               <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal mb-8 max-w-[380px]">
-                Have questions about our matching algorithm, privacy guarantees, or safety escalation protocols? Here is how WeHere safeguards your experience.
+                We believe that honest conversations begin with clarity. Here are answers to common questions about our community, privacy features, and safety standards.
               </p>
             </div>
 
@@ -72,19 +72,19 @@ export default function FAQSection() {
             <div className="w-full max-w-[380px] bg-[#F7F7F9] rounded-2xl border border-zinc-300/80 p-5 sm:p-6 shadow-xs flex flex-col gap-3">
               <div className="flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-zinc-400">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#5E4BEE]" />
-                <span>SUPPORT DIRECTORY</span>
+                <span>LET US CONNECT</span>
               </div>
               <div className="text-sm font-bold text-zinc-900">
-                Need more guidance?
+                Have more questions?
               </div>
               <p className="text-xs text-zinc-500 leading-relaxed">
-                Our support team and community guides are available 24/7 for safe platform inquiries.
+                Whether you are exploring membership or have a question about our mission, our team is always happy to hear from you.
               </p>
               <a
                 href="mailto:support@wehere.org"
                 className="inline-flex items-center justify-between w-full mt-1 px-4 py-2.5 rounded-xl bg-zinc-900 text-white hover:bg-black transition-colors text-xs font-semibold tracking-wide"
               >
-                <span>Email Support Guides</span>
+                <span>Send Us A Message</span>
                 <span className="text-[#7F77DD] font-mono text-sm">→</span>
               </a>
             </div>
@@ -123,7 +123,6 @@ export default function FAQSection() {
                       </span>
                     </div>
 
-                    {/* Minimal + / − Toggle Icon (Zero Lucide) */}
                     <div className="w-8 h-8 rounded-full bg-zinc-200/60 group-hover:bg-zinc-900 group-hover:text-white transition-all flex items-center justify-center shrink-0 text-zinc-700 font-mono text-base font-light">
                       {isOpen ? '−' : '+'}
                     </div>
