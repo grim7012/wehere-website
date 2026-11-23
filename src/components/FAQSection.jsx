@@ -58,7 +58,7 @@ export default function FAQSection() {
       >
         {/* ── SECTION HEADER ── */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl uppercase tracking-tight text-black leading-[1.1]">
+          <h2 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl  tracking-tight text-black leading-[1.1]">
             Everything You Need<br className="hidden sm:block" /> To Know
           </h2>
         </div>
@@ -76,7 +76,7 @@ export default function FAQSection() {
                   aria-expanded={isOpen}
                   className="w-full py-4 text-left flex items-center justify-between gap-4 group cursor-pointer"
                 >
-                  <span className="font-mono text-xs sm:text-sm font-semibold text-black uppercase tracking-wider group-hover:text-zinc-600 transition-colors">
+                  <span className="font-mono text-xs sm:text-sm font-semibold text-black  tracking-wider group-hover:text-zinc-600 transition-colors">
                     {item.q}
                   </span>
 
@@ -99,9 +99,6 @@ export default function FAQSection() {
         </div>
 
         {/* ── BOTTOM NOTE ── */}
-        <div className="mt-8 text-center text-[10px] font-mono tracking-widest uppercase text-zinc-400">
-          Have more questions? Reach out to support@wehere.org
-        </div>
 
       </div>
     </section>

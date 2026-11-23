@@ -33,9 +33,9 @@ export default function GrievanceRedressal() {
       title: 'Designated Statutory Grievance Officer',
       content: (
         <>
-          <p className="font-semibold text-zinc-900">Srishti Gautam</p>
+          <p className="font-semibold text-zinc-900">Officer</p>
           <p className="text-xs text-[#5E4BEE] font-mono uppercase tracking-wider mt-0.5">
-            Grievance Redressal Officer & Additional CMO
+            Grievance Redressal Officer
           </p>
           <p className="mt-2 text-zinc-600">
             Designated under Indian law as the primary authority for addressing user grievances, content safety reports, and statutory regulatory notifications.
@@ -98,13 +98,11 @@ export default function GrievanceRedressal() {
             {sections.map((item, idx) => (
               <div
                 key={idx}
-                className={`relative flex flex-col group transition-all duration-1000 ease-out ${
-                  isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-                } ${
-                  idx % 3 === 0 ? 'lg:translate-y-0' :
-                  idx % 3 === 1 ? 'lg:translate-y-16' :
-                  'lg:translate-y-32'
-                }`}
+                className={`relative flex flex-col group transition-all duration-1000 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                  } ${idx % 3 === 0 ? 'lg:translate-y-0' :
+                    idx % 3 === 1 ? 'lg:translate-y-16' :
+                      'lg:translate-y-32'
+                  }`}
                 style={{ transitionDelay: `${idx * 150}ms` }}
               >
                 {/* Ghost Number */}

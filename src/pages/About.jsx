@@ -68,8 +68,22 @@ export default function About() {
       quote: "Our priority is ensuring our community is genuinely safe and dignified. Strict conduct standards so no one feels unsafe reaching out."
     },
     {
+      name: 'Ruchita',
+      role: 'CTO',
+      dept: 'Platform Architecture & Engineering',
+      image: '/assets/amber-photo.jpg',
+      quote: "Building resilient, secure peer infrastructure where every voice is protected and latency never stands in the way of human support."
+    },
+    {
+      name: 'Karan Sharma',
+      role: 'Co-founder & CMO',
+      dept: 'Brand Strategy & Growth',
+      image: '/assets/guy-portrait.jpg',
+      quote: "Normalizing empathetic peer support across colleges and young adults. Making genuine listening as accessible as opening your phone."
+    },
+    {
       name: 'Srishti Gautam',
-      role: 'Additional CMO & Grievance Officer',
+      role: 'CMO ',
       dept: 'Statutory Redressal & Outreach',
       image: '/assets/founder-3.jpg',
       quote: "Everyday stress begins much earlier, and what helps early on is having someone safe, trustworthy, and empathetic to talk to."
@@ -196,7 +210,7 @@ export default function About() {
                   <span className="font-display font-extrabold text-[10px] sm:text-xs tracking-wider uppercase opacity-95">
                     Quiet Sanctuary • Adults 18+
                   </span>
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] opacity-80 hidden sm:inline-block">
+                  <span className="text-[10px] font-mono  tracking-[0.2em] opacity-80 hidden sm:inline-block">
                     WeHere 2026
                   </span>
                 </div>
@@ -211,11 +225,11 @@ export default function About() {
 
         {/* ── OUR FOUNDERS SECTION ── */}
         <section id="founders" className="mb-24 sm:mb-32" ref={foundersReveal.ref}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-y-12 sm:gap-x-8 sm:gap-y-12 lg:gap-8 items-stretch">
 
-            {/* BLOCK 1 */}
+            {/* BLOCK 1: KANISHK KASHYAP (FEATURE CARD) */}
             <div
-              className={`lg:col-span-6 flex flex-col transition-all duration-1000 ease-out ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
+              className={`sm:col-span-2 lg:col-span-6 flex flex-col justify-between transition-all duration-1000 ease-out ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
             >
               <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-6 items-center">
                 <div className="sm:col-span-6 relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
@@ -246,31 +260,91 @@ export default function About() {
               </div>
             </div>
 
-            {/* BLOCK 2 */}
+            {/* BLOCK 2: NAILAH ISTIFA */}
             <div
-              className={`lg:col-span-3 flex flex-col transition-all duration-1000 ease-out delay-150 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
+              className={`sm:col-span-1 lg:col-span-3 flex flex-col justify-between transition-all duration-1000 ease-out delay-150 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
             >
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
-                <img src={founders[1].image} alt={founders[1].name} className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
-              </div>
-              <div className="mt-5">
-                <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-tight">{founders[1].name}</h3>
-                <p className="text-[11px] font-mono text-[#5E4BEE] uppercase tracking-wider mb-2">{founders[1].role}</p>
-                <p className="text-xs text-zinc-500 leading-relaxed font-normal">"{founders[1].quote}"</p>
+              <div>
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
+                  <img src={founders[1].image} alt={founders[1].name} className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+                </div>
+                <div className="mt-5">
+                  <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-tight">{founders[1].name}</h3>
+                  <p className="text-[11px] font-mono text-[#5E4BEE] uppercase tracking-wider mb-2">{founders[1].role}</p>
+                  <p className="text-xs text-zinc-500 leading-relaxed font-normal">"{founders[1].quote}"</p>
+                </div>
               </div>
             </div>
 
-            {/* BLOCK 3 */}
+            {/* BLOCK 3: RUCHITA (CTO) */}
             <div
-              className={`lg:col-span-3 flex flex-col transition-all duration-1000 ease-out delay-300 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
+              className={`sm:col-span-1 lg:col-span-3 flex flex-col justify-between transition-all duration-1000 ease-out delay-300 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
             >
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
-                <img src={founders[2].image} alt={founders[2].name} className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+              <div>
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
+                  <img src={founders[2].image} alt={founders[2].name} className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+                </div>
+                <div className="mt-5">
+                  <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-tight">{founders[2].name}</h3>
+                  <p className="text-[11px] font-mono text-[#5E4BEE] uppercase tracking-wider mb-2">{founders[2].role}</p>
+                  <p className="text-xs text-zinc-500 leading-relaxed font-normal">"{founders[2].quote}"</p>
+                </div>
               </div>
-              <div className="mt-5">
-                <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-tight">{founders[2].name}</h3>
-                <p className="text-[11px] font-mono text-[#5E4BEE] uppercase tracking-wider mb-2">{founders[2].role}</p>
-                <p className="text-xs text-zinc-500 leading-relaxed font-normal">"{founders[2].quote}"</p>
+            </div>
+
+            {/* BLOCK 4: KARAN SHARMA (CO-FOUNDER & CMO) */}
+            <div
+              className={`sm:col-span-1 lg:col-span-3 flex flex-col justify-between transition-all duration-1000 ease-out delay-150 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
+            >
+              <div>
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
+                  <img src={founders[3].image} alt={founders[3].name} className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+                </div>
+                <div className="mt-5">
+                  <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-tight">{founders[3].name}</h3>
+                  <p className="text-[11px] font-mono text-[#5E4BEE] uppercase tracking-wider mb-2">{founders[3].role}</p>
+                  <p className="text-xs text-zinc-500 leading-relaxed font-normal">"{founders[3].quote}"</p>
+                </div>
+              </div>
+            </div>
+
+            {/* BLOCK 5: SRISHTI GAUTAM (CMO & GRIEVANCE OFFICER) */}
+            <div
+              className={`sm:col-span-1 lg:col-span-3 flex flex-col justify-between transition-all duration-1000 ease-out delay-300 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
+            >
+              <div>
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
+                  <img src={founders[4].image} alt={founders[4].name} className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+                </div>
+                <div className="mt-5">
+                  <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-tight">{founders[4].name}</h3>
+                  <p className="text-[11px] font-mono text-[#5E4BEE] uppercase tracking-wider mb-2">{founders[4].role}</p>
+                  <p className="text-xs text-zinc-500 leading-relaxed font-normal">"{founders[4].quote}"</p>
+                </div>
+              </div>
+            </div>
+
+            {/* LEADERSHIP PHILOSOPHY CARD */}
+            <div
+              className={`sm:col-span-2 lg:col-span-6 flex flex-col justify-between p-7 sm:p-9 bg-white border border-zinc-200/90 rounded-2xl shadow-sm transition-all duration-1000 ease-out delay-450 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
+            >
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 bg-[#5E4BEE]" />
+                  <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-400 font-semibold">Leadership Commitment</span>
+                </div>
+                <h3 className="font-display font-black text-2xl sm:text-3xl text-zinc-950 uppercase tracking-tight leading-snug">
+                  Empathetic listening <br />
+                  <span className="text-[#5E4BEE]">engineered</span> for safety.
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed max-w-lg font-normal">
+                  Our multidisciplinary leadership unifies product engineering, community operations, brand awareness, and statutory grievance compliance. Together, we are committed to keeping WeHere a tranquil sanctuary where every voice is heard without fear of judgment.
+                </p>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-zinc-100 flex items-center justify-between text-xs text-zinc-400 font-mono">
+                <span className="tracking-widest text-[10px]">WeHere Executive Board</span>
+                <span className="text-[#5E4BEE] font-bold">2026</span>
               </div>
             </div>
 
@@ -328,9 +402,9 @@ export default function About() {
               <div className="flex items-start gap-3 hover:text-zinc-800 transition-colors">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 shrink-0 w-20 pt-1">Grievance</span>
                 <span className="text-zinc-600">
-                  Srishti Gautam (Grievance Redressal Officer) :{' '}
-                  <a href="mailto:grievance@wehere.co.in" className="underline underline-offset-2 decoration-zinc-300 hover:decoration-[#5E4BEE] transition-colors">
-                    grievance@wehere.co.in
+                  Grievance Redressal Officer :{' '}
+                  <a href="mailto:grievance@WeHere.co.in" className="underline underline-offset-2 decoration-zinc-300 hover:decoration-[#5E4BEE] transition-colors">
+                    grievance@WeHere.co.in
                   </a>
                 </span>
               </div>
@@ -338,7 +412,7 @@ export default function About() {
                 <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 shrink-0 w-20 pt-1">Business</span>
                 <span className="text-zinc-600">
                   <a href="mailto:contact@weherenetworks.com" className="underline underline-offset-2 decoration-zinc-300 hover:decoration-[#5E4BEE] transition-colors">
-                    contact@weherenetworks.com
+                    contact@WeHerenetworks.com
                   </a>
                 </span>
               </div>

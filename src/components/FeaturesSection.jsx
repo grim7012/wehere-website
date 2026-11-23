@@ -53,7 +53,7 @@ export default function FeaturesSection() {
 
         {/* ── MINIMAL SECTION TRACKER ── */}
         <div
-          className={`flex items-center justify-between border-b border-white/[0.08] pb-4 mb-10 sm:mb-12 text-[11px] font-mono tracking-widest uppercase transition-all duration-1000 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          className={`flex items-center justify-between border-b border-white/[0.08] pb-4 mb-10 sm:mb-12 text-[11px] font-mono tracking-widest  transition-all duration-1000 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
         >
           <div className="flex items-center gap-2.5">

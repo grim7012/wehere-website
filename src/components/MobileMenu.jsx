@@ -70,14 +70,35 @@ export default function MobileMenu({ isOpen, onClose }) {
 
       {/* Drawer Footer Actions */}
       <div className="border-t border-black/[0.06] pt-6 flex flex-col gap-4">
-        <a
-          href="/#download"
-          onClick={onClose}
-          className="btn-spring w-full py-4 rounded-full bg-wehere-dark text-white font-display font-bold text-center text-base shadow-bumble-md flex items-center justify-center gap-2"
-        >
-          <span>Download WeHere Free</span>
-          <Download className="w-5 h-5" />
-        </a>
+        <div className="grid grid-cols-2 gap-3 w-full">
+          {/* Apple App Store */}
+          <a
+            href="/#download"
+            onClick={onClose}
+            className="btn-spring py-3.5 px-4 rounded-2xl bg-wehere-dark text-white font-display font-bold text-center text-xs shadow-bumble-md flex items-center justify-center gap-2.5 hover:bg-black transition-colors"
+          >
+            <img
+              src="/assets/logo/apple.png"
+              alt="Apple"
+              className="w-4 h-4 object-contain invert shrink-0"
+            />
+            <span>App Store</span>
+          </a>
+
+          {/* Google Play */}
+          <a
+            href="/#download"
+            onClick={onClose}
+            className="btn-spring py-3.5 px-4 rounded-2xl bg-wehere-dark text-white font-display font-bold text-center text-xs shadow-bumble-md flex items-center justify-center gap-2.5 hover:bg-black transition-colors"
+          >
+            <img
+              src="/assets/logo/googleplay.jpg"
+              alt="Google Play"
+              className="w-4 h-4 object-contain rounded-sm shrink-0"
+            />
+            <span>Google Play</span>
+          </a>
+        </div>
         
         <div className="flex items-center justify-between text-xs text-wehere-tertiary pt-2">
           <span>Strictly Adults 18+</span>

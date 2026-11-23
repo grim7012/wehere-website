@@ -223,16 +223,47 @@ export default function HeroSection() {
                 Sometimes, all we need is someone who understands. Someone who listens without judgment and reminds us that we are not alone.
               </p>
 
-              {/* CTA Button */}
-              <a
-                href="#download"
-                className={`btn-spring group inline-flex items-center gap-3.5 px-8 lg:px-9 xl:px-10 py-3.5 lg:py-4 xl:py-4.5 rounded-full bg-zinc-900 text-white hover:bg-black text-xs lg:text-sm xl:text-[15px] font-semibold tracking-wider uppercase border-2 border-[#5E4BEE]/45 shadow-[0_8px_32px_rgba(94,75,238,0.28)] hover:shadow-[0_12px_44px_rgba(94,75,238,0.48)] hover:border-[#5E4BEE] transition-all duration-700 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                  }`}
-                style={{ transitionDelay: '620ms' }}
-              >
-                <span>Discover WeHere</span>
-                <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 text-[#7A68F8] group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />
-              </a>
+              {/* CTA Button & Store Badges */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3.5 pt-1">
+                <a
+                  href="#download"
+                  className={`btn-spring group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-zinc-900 text-white hover:bg-black text-xs font-semibold tracking-wider border-2 border-[#5E4BEE]/45 shadow-[0_8px_32px_rgba(94,75,238,0.28)] hover:shadow-[0_12px_44px_rgba(94,75,238,0.48)] hover:border-[#5E4BEE] transition-all duration-700 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                    }`}
+                  style={{ transitionDelay: '620ms' }}
+                >
+                  <span>Discover WeHere</span>
+                  <ArrowRight className="w-4 h-4 text-[#7A68F8] group-hover:text-white group-hover:translate-x-1.5 transition-all duration-300" />
+                </a>
+
+                <div
+                  className={`flex items-center gap-2 transition-all duration-700 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                    }`}
+                  style={{ transitionDelay: '700ms' }}
+                >
+                  <a
+                    href="#download"
+                    className="p-2.5 rounded-full bg-white/80 hover:bg-white text-zinc-900 border border-black/[0.08] shadow-sm hover:shadow transition-all flex items-center justify-center"
+                    aria-label="Download on App Store"
+                  >
+                    <img
+                      src="/assets/logo/apple.png"
+                      alt="Apple App Store"
+                      className="w-4 h-4 object-contain"
+                    />
+                  </a>
+                  <a
+                    href="#download"
+                    className="p-2.5 rounded-full bg-white/80 hover:bg-white text-zinc-900 border border-black/[0.08] shadow-sm hover:shadow transition-all flex items-center justify-center"
+                    aria-label="Get it on Google Play"
+                  >
+                    <img
+                      src="/assets/logo/googleplay.jpg"
+                      alt="Google Play"
+                      className="w-4 h-4 object-contain rounded-sm"
+                    />
+                  </a>
+                </div>
+              </div>
 
             </div>
 
@@ -248,9 +279,9 @@ export default function HeroSection() {
               >
                 <div className="h-[2px] w-9 rounded-full bg-gradient-to-r from-[#5E4BEE] via-[#7F77DD] to-[#378ADD] shadow-[0_0_10px_rgba(94,75,238,0.3)] mb-1" />
                 <p className="text-xs lg:text-sm xl:text-base text-zinc-600 leading-relaxed font-normal">
-                  Healing begins when we feel heard, understood, and accepted. You are not alone. We are here.
+                  Healing begins when we feel heard, understood, and accepted. You are not alone. WeHere is here.
                 </p>
-                <span className="text-[11px] font-mono font-medium text-zinc-400 uppercase tracking-widest pt-1">
+                <span className="text-[11px] font-mono font-medium text-zinc-400  tracking-widest pt-1">
                   WeHere Sanctuary
                 </span>
               </div>

@@ -52,9 +52,19 @@ export default function Navbar({ onOpenMobileMenu }) {
 
           <a
             href="/#download"
-            className="btn-spring inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-wehere-dark text-white hover:bg-black border border-[#5E4BEE]/25 shadow-sm hover:shadow-[0_4px_20px_rgba(94,75,238,0.25)] transition-all"
+            className="btn-spring inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-wehere-dark text-white hover:bg-black border border-[#5E4BEE]/25 shadow-sm hover:shadow-[0_4px_20px_rgba(94,75,238,0.25)] transition-all gap-2"
           >
-            Get the App
+            <img
+              src="/assets/logo/apple.png"
+              alt="Apple"
+              className="w-3.5 h-3.5 object-contain invert shrink-0"
+            />
+            <img
+              src="/assets/logo/googleplay.jpg"
+              alt="Google Play"
+              className="w-3.5 h-3.5 object-contain rounded-sm shrink-0"
+            />
+            <span>Get the App</span>
           </a>
         </div>
 

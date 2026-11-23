@@ -32,7 +32,7 @@ export default function CTASection() {
 
         {/* Headline from Document */}
         <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.08] text-white uppercase">
-          You Are Not Alone. We Are Here.
+          You Are Not Alone. WeHere Is Here.
         </h2>
 
         {/* Narrative Description from Document */}
@@ -48,9 +48,11 @@ export default function CTASection() {
             href="#download"
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-3.5 px-7 py-3.5 rounded-2xl bg-white text-zinc-950 hover:bg-zinc-100 transition-all duration-300 shadow-[0_4px_24px_rgba(255,255,255,0.15)] border border-white"
           >
-            <svg className="w-6 h-6 fill-zinc-950" viewBox="0 0 24 24">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.84c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.58.67-1.09 1.77-.95 2.83 1.04.08 2.1-.55 2.71-1.29z" />
-            </svg>
+            <img
+              src="/assets/logo/apple.png"
+              alt="Apple App Store"
+              className="w-6 h-6 object-contain shrink-0"
+            />
             <div className="flex flex-col text-left">
               <span className="text-[10px] leading-tight font-medium text-zinc-600 uppercase tracking-wider">
                 Download on the
@@ -66,9 +68,11 @@ export default function CTASection() {
             href="#download"
             className="group w-full sm:w-auto inline-flex items-center justify-center gap-3.5 px-7 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all duration-300 backdrop-blur-md"
           >
-            <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
-              <path d="M3.609 1.814L13.793 12 3.61 22.186c-.347-.367-.56-.91-.56-1.58V3.394c0-.67.213-1.213.56-1.58zm11.606 11.607l2.257 2.257-11.23 6.368 8.973-8.625zm0-2.842L6.242 1.954l11.23 6.368-2.257 2.257zm1.421 1.421l3.541 2.006c.866.49.866 1.298 0 1.788l-3.541 2.006-2.129-2.129 2.129-2.129z" />
-            </svg>
+            <img
+              src="/assets/logo/googleplay.jpg"
+              alt="Google Play"
+              className="w-5 h-5 object-contain rounded shrink-0 mix-blend-screen"
+            />
             <div className="flex flex-col text-left">
               <span className="text-[10px] leading-tight font-medium text-white/70 uppercase tracking-wider">
                 GET IT ON

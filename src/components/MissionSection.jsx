@@ -46,19 +46,46 @@ export default function MissionSection() {
               Because no one should struggle through life's challenges alone.
             </p>
 
-            <a
-              href="#download"
-              className="group inline-flex items-center gap-3 px-6 py-2.5 bg-black text-white text-[10px] sm:text-xs uppercase tracking-widest font-bold hover:bg-zinc-800 transition-all duration-300 rounded-none w-fit"
-            >
-              <span>Download Now</span>
-              <svg
-                className="w-3.5 h-3.5 fill-none stroke-current group-hover:translate-x-1 transition-transform"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
+            {/* App Store & Google Play Download Buttons */}
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="#download"
+                className="group inline-flex items-center gap-3 px-5 py-2.5 bg-black text-white hover:bg-zinc-800 transition-all duration-300 rounded-none shadow-sm"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
+                <img
+                  src="/assets/logo/apple.png"
+                  alt="Apple App Store"
+                  className="w-4 h-4 object-contain invert shrink-0"
+                />
+                <div className="flex flex-col text-left">
+                  <span className="text-[8px] uppercase tracking-wider text-zinc-400 font-medium leading-none">
+                    Download on
+                  </span>
+                  <span className="text-xs font-bold tracking-tight text-white leading-tight font-display">
+                    App Store
+                  </span>
+                </div>
+              </a>
+
+              <a
+                href="#download"
+                className="group inline-flex items-center gap-3 px-5 py-2.5 bg-black text-white hover:bg-zinc-800 transition-all duration-300 rounded-none shadow-sm"
+              >
+                <img
+                  src="/assets/logo/googleplay.jpg"
+                  alt="Google Play"
+                  className="w-4 h-4 object-contain rounded-sm shrink-0"
+                />
+                <div className="flex flex-col text-left">
+                  <span className="text-[8px] uppercase tracking-wider text-zinc-400 font-medium leading-none">
+                    Get it on
+                  </span>
+                  <span className="text-xs font-bold tracking-tight text-white leading-tight font-display">
+                    Google Play
+                  </span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
 

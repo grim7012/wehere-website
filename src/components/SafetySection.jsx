@@ -76,7 +76,7 @@ export default function SafetySection() {
             }`}
         >
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 mb-2 text-[10px] font-mono tracking-widest uppercase text-zinc-400">
+            <div className="flex items-center gap-2 mb-2 text-[10px] font-mono tracking-widest text-zinc-400">
               <span className="font-semibold text-zinc-300">/ 03</span>
               <span>Our Commitment</span>
             </div>
