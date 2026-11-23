@@ -1,24 +1,22 @@
-import React from 'react';
-import { ArrowRight, Plus } from 'lucide-react';
+import React, { useState } from 'react';
 
 export default function FeaturesSection() {
+  const [activeMobileIdx, setActiveMobileIdx] = useState(0);
+
   const cards = [
     {
-      number: '01',
       title: 'Shared Experiences',
-      desc: 'Discover and connect with individuals who relate to the real challenges and thoughts you choose to share.',
+      desc: 'Connect with peers who relate to the real challenges you choose to share.',
       image: '/assets/peer_connection.jpg'
     },
     {
-      number: '02',
       title: 'Zero Judgment',
-      desc: 'Experience open conversations in a gentle environment that genuinely values respect, active listening, and warmth.',
+      desc: 'Open conversations in an environment that genuinely values empathy and listening.',
       image: '/assets/emotional_safety.jpg'
     },
     {
-      number: '03',
-      title: 'A Space To Be Yourself',
-      desc: 'Express your feelings at your own comfort level, with full control over your privacy and personal story.',
+      title: 'Space To Be Yourself',
+      desc: 'Share your thoughts at your own pace with complete control over your privacy.',
       image: '/assets/mindful_journaling.jpg'
     }
   ];
@@ -26,111 +24,127 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="relative bg-[#EBECEF] text-zinc-900 py-16 sm:py-20 lg:py-28 px-5 sm:px-8 lg:px-14 border-t border-black/[0.08] overflow-hidden"
+      className="relative bg-[#EBECEF] text-zinc-900 h-[100dvh] max-h-[100dvh] flex flex-col justify-between py-3 sm:py-5 lg:py-6 px-4 sm:px-8 lg:px-14 border-t border-black/[0.08] overflow-hidden select-none"
     >
       {/* Subtle Architectural Grid Lines */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.035] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
-      <div className="relative max-w-[1560px] mx-auto z-10">
+      {/* Subtle Ambient Glow in Logo Colors */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-gradient-to-tr from-[#5E4BEE]/[0.05] via-[#7F77DD]/[0.03] to-[#378ADD]/[0.04] blur-[120px] pointer-events-none -z-10" />
 
-        {/* ── TOP SECTION HEADER / TRACKER ── */}
-        <div className="flex items-center justify-between border-b border-zinc-300/80 pb-5 mb-10 sm:mb-14 text-xs font-semibold tracking-wider">
-          <div className="flex items-center gap-2.5">
-            <span className="text-[#5E4BEE] font-bold">/ 01</span>
-            <span className="uppercase text-zinc-600 tracking-[0.2em]">What Makes WeHere Different</span>
-          </div>
+      <div className="relative max-w-6xl mx-auto z-10 w-full h-full flex flex-col justify-between">
 
-          <div className="flex items-center gap-3 text-zinc-500">
-            <div className="flex items-center gap-1.5 font-mono text-[11px]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5E4BEE]" />
-              <span className="font-semibold text-zinc-800">2,840+</span>
-              <span className="hidden sm:inline">people holding space</span>
-            </div>
-            <span className="text-zinc-400 font-light">+</span>
+        {/* ── HEADER (Compact & Elegant with Logo Accent) ── */}
+        <div className="text-center shrink-0 pt-1 sm:pt-2">
+          <div className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-semibold tracking-[0.25em] text-zinc-500 uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#5E4BEE] to-[#378ADD] shadow-[0_0_6px_rgba(94,75,238,0.5)]" />
+            <span>This Is What We Do</span>
           </div>
+          <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-zinc-900 tracking-tight mt-1">
+            Our Core <span className="bg-gradient-to-r from-[#5E4BEE] to-[#378ADD] bg-clip-text text-transparent">Pillars</span>
+          </h2>
         </div>
 
-        {/* ── MAIN CONTENT GRID ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-stretch">
-          
-          {/* LEFT INTRO COLUMN */}
-          <div className="lg:col-span-4 xl:col-span-4 flex flex-col justify-between items-start pr-0 lg:pr-4">
-            
-            <div className="max-w-[420px]">
-              <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-[2.65rem] xl:text-5xl uppercase tracking-tight text-zinc-900 leading-[1.08] mb-5 sm:mb-6">
-                A Community Built On True Understanding
-              </h2>
-
-              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal mb-8 max-w-[360px]">
-                We believe meaningful connections make difficult moments feel a little less lonely. We bring people together based on shared experiences, creating spaces for open conversations, mutual empathy, and genuine peer support.
-              </p>
-            </div>
-
-            <a
-              href="#about"
-              className="group inline-flex items-center gap-3 px-6 py-3 rounded-lg border border-zinc-400/80 bg-zinc-200/50 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-all duration-300 text-xs sm:text-sm font-semibold tracking-wide text-zinc-900 shadow-sm"
+        {/* ── DESKTOP & TABLET: 3 Arch Cards Side By Side (md+) ── */}
+        <div className="hidden md:flex items-center justify-center gap-5 lg:gap-7 flex-1 min-h-0 my-auto py-2">
+          {cards.map((c, i) => (
+            <div
+              key={i}
+              className="group flex flex-col bg-[#F7F7F9] hover:bg-white rounded-t-[160px] lg:rounded-t-[180px] rounded-b-2xl border border-zinc-300/80 hover:border-[#5E4BEE]/35 p-3 sm:p-3.5 lg:p-4 transition-all duration-300 shadow-sm hover:shadow-[0_16px_36px_rgba(94,75,238,0.1)] overflow-hidden h-full max-h-[64dvh] lg:max-h-[68dvh] w-[270px] lg:w-[310px] xl:w-[330px]"
             >
-              <span>Explore Our Community</span>
-              <ArrowRight className="w-4 h-4 text-[#5E4BEE] group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
-            </a>
+              {/* Arch Image Window: Grayscale image with blue/purple gradient rim */}
+              <div className="w-full h-[64%] rounded-t-[140px] lg:rounded-t-[160px] p-[2px] bg-gradient-to-b from-[#5E4BEE]/30 via-[#378ADD]/20 to-transparent overflow-hidden shrink-0">
+                <div className="w-full h-full rounded-t-[138px] lg:rounded-t-[158px] overflow-hidden relative bg-zinc-200">
+                  <img
+                    src={c.image}
+                    alt={c.title}
+                    className="w-full h-full object-cover filter grayscale contrast-125 brightness-95 group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/20 via-transparent to-transparent opacity-60" />
+                </div>
+              </div>
 
-          </div>
+              {/* Card Content: Title & Minimal Description (No Read More Button) */}
+              <div className="pt-4 lg:pt-5 px-2 text-center flex flex-col items-center justify-center flex-1 min-h-0">
+                <h3 className="font-display text-lg lg:text-xl xl:text-2xl font-bold text-zinc-900 tracking-tight mb-1">
+                  {c.title}
+                </h3>
 
-          {/* RIGHT CARDS GRID */}
-          <div className="lg:col-span-8 xl:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-5 xl:gap-6">
+                {/* Subtle blue & purple accent bar */}
+                <div className="w-5 h-[2px] rounded-full bg-gradient-to-r from-[#5E4BEE] to-[#378ADD] mb-2 group-hover:w-8 transition-all duration-300" />
+
+                <p className="text-xs lg:text-[13px] text-zinc-500 leading-relaxed font-normal max-w-[240px]">
+                  {c.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ── MOBILE OPTIMIZED (< md): Single Viewport Horizontal Swipe ── */}
+        <div className="flex md:hidden flex-col justify-center flex-1 min-h-0 w-full my-auto py-1">
+          <div
+            className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory scrollbar-none px-3 py-1 items-center h-full max-h-[65dvh]"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            onScroll={(e) => {
+              const scrollLeft = e.currentTarget.scrollLeft;
+              const cardWidth = e.currentTarget.offsetWidth * 0.75;
+              const idx = Math.round(scrollLeft / cardWidth);
+              if (idx !== activeMobileIdx && idx >= 0 && idx < cards.length) {
+                setActiveMobileIdx(idx);
+              }
+            }}
+          >
             {cards.map((c, i) => (
               <div
                 key={i}
-                className="group relative bg-[#F7F7F9] hover:bg-white rounded-2xl border border-zinc-300/80 hover:border-zinc-400/80 p-6 sm:p-7 flex flex-col justify-between h-[380px] sm:h-[400px] lg:h-[420px] transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] overflow-hidden"
+                className="group flex flex-col bg-[#F7F7F9] rounded-t-[140px] rounded-b-2xl border border-zinc-300/80 p-3 pb-4 shadow-sm overflow-hidden h-full max-h-[60dvh] w-[75vw] max-w-[270px] shrink-0 snap-center justify-between"
               >
-                {/* Number & Plus */}
-                <div className="flex items-center justify-between z-20">
-                  <span className="font-mono text-xs font-bold text-zinc-400 tracking-wider">
-                    {c.number}
-                  </span>
-                  <Plus className="w-4 h-4 text-zinc-400 group-hover:text-[#5E4BEE] transition-colors" />
+                {/* Arch Image Window with gradient rim */}
+                <div className="w-full h-[64%] rounded-t-[130px] p-[2px] bg-gradient-to-b from-[#5E4BEE]/35 via-[#378ADD]/25 to-transparent overflow-hidden shrink-0">
+                  <div className="w-full h-full rounded-t-[128px] overflow-hidden relative bg-zinc-200">
+                    <img
+                      src={c.image}
+                      alt={c.title}
+                      className="w-full h-full object-cover filter grayscale contrast-125 brightness-95"
+                    />
+                  </div>
                 </div>
 
-                {/* Text Content */}
-                <div className="mt-4 mb-auto z-20 max-w-[220px]">
-                  <h3 className="font-display font-bold text-xl sm:text-[1.35rem] text-zinc-900 leading-snug tracking-tight mb-2.5">
+                {/* Card Content (No Read More Button) */}
+                <div className="pt-3 px-1 text-center flex flex-col items-center justify-center flex-1 min-h-0">
+                  <h3 className="font-display text-base font-bold text-zinc-900 tracking-tight mb-1">
                     {c.title}
                   </h3>
-                  <p className="text-xs sm:text-[13px] text-zinc-500 leading-relaxed font-normal">
+                  <div className="w-4 h-[2px] rounded-full bg-gradient-to-r from-[#5E4BEE] to-[#378ADD] mb-1.5" />
+                  <p className="text-[11px] text-zinc-500 leading-snug font-normal line-clamp-2">
                     {c.desc}
                   </p>
                 </div>
-
-                {/* Bottom Arrow Button */}
-                <div className="flex items-end justify-between z-20 mt-6">
-                  <div className="w-10 h-10 rounded-full border border-zinc-400/70 bg-white/80 group-hover:bg-zinc-900 group-hover:border-zinc-900 group-hover:text-white flex items-center justify-center text-zinc-700 transition-all duration-300 shadow-sm">
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                  </div>
-                </div>
-
-                {/* Diagonal Cut Corner Graphic */}
-                <div className="absolute bottom-0 right-0 w-[70%] h-[58%] overflow-hidden rounded-br-2xl pointer-events-none z-10">
-                  <div
-                    className="absolute inset-0 bg-gradient-to-r from-[#5E4BEE] via-[#7F77DD] to-[#378ADD] z-10"
-                    style={{ clipPath: 'polygon(0% 100%, 100% 20%, 100% 26%, 6% 100%)' }}
-                  />
-                  <div
-                    className="absolute inset-0 overflow-hidden z-0"
-                    style={{ clipPath: 'polygon(5% 100%, 100% 25%, 100% 100%, 0% 100%)' }}
-                  >
-                    <img
-                      src={c.image}
-                      alt=""
-                      className="w-full h-full object-cover filter grayscale contrast-125 brightness-95 group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-zinc-900/15 mix-blend-multiply" />
-                  </div>
-                </div>
-
               </div>
             ))}
           </div>
 
+          {/* Mobile Dot Indicators with Logo Colors */}
+          <div className="flex items-center justify-center gap-1.5 pt-2 shrink-0">
+            {cards.map((_, i) => (
+              <span
+                key={i}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  activeMobileIdx === i
+                    ? 'w-5 bg-gradient-to-r from-[#5E4BEE] to-[#378ADD] shadow-[0_0_6px_rgba(94,75,238,0.5)]'
+                    : 'w-1.5 bg-zinc-400/60'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* ── FOOTER BAR ── */}
+        <div className="text-center text-[10px] font-mono text-zinc-400 uppercase tracking-widest shrink-0 pb-1 flex items-center justify-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#5E4BEE]/60" />
+          <span>WeHere Sanctuary Pillars</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#378ADD]/60" />
         </div>
 
       </div>
