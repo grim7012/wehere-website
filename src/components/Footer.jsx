@@ -92,12 +92,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/about" className="hover:text-white transition-colors">
-                  About Us
+                  Our Story
                 </Link>
               </li>
               <li>
                 <a href="/#features" className="hover:text-white transition-colors">
-                  Our Community
+                  Features
                 </a>
               </li>
               <li>
@@ -107,12 +107,12 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/#support" className="hover:text-white transition-colors">
-                  Common Questions
+                  FAQ &amp; Support
                 </a>
               </li>
               <li>
-                <a href="mailto:support@wehere.org" className="hover:text-white transition-colors">
-                  Contact Us
+                <a href="/#download" className="hover:text-white transition-colors">
+                  Get the App
                 </a>
               </li>
             </ul>

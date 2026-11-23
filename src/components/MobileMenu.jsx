@@ -71,7 +71,7 @@ export default function MobileMenu({ isOpen, onClose }) {
       {/* Drawer Footer Actions */}
       <div className="border-t border-black/[0.06] pt-6 flex flex-col gap-4">
         <a
-          href="#download"
+          href="/#download"
           onClick={onClose}
           className="btn-spring w-full py-4 rounded-full bg-wehere-dark text-white font-display font-bold text-center text-base shadow-bumble-md flex items-center justify-center gap-2"
         >

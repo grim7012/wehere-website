@@ -51,7 +51,7 @@ export default function Navbar({ onOpenMobileMenu }) {
           </nav>
 
           <a
-            href="#download"
+            href="/#download"
             className="btn-spring inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-wehere-dark text-white hover:bg-black border border-[#5E4BEE]/25 shadow-sm hover:shadow-[0_4px_20px_rgba(94,75,238,0.25)] transition-all"
           >
             Get the App
