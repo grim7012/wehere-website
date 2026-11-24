@@ -59,16 +59,16 @@ export default function SafetySection() {
     <section
       ref={sectionRef}
       id="safety"
-      className="relative bg-[#0B0B0E] text-white h-[100dvh] max-h-[100dvh] flex flex-col justify-center py-6 sm:py-10 border-t border-b border-zinc-800/80 overflow-hidden select-none"
+      className="relative bg-[#0B0B0E] text-white min-h-[100dvh] md:h-[100dvh] md:max-h-[100dvh] flex flex-col justify-center py-8 sm:py-10 border-t border-b border-zinc-800/80 overflow-hidden select-none"
     >
       {/* Subtle Architectural Grid Lines */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
       {/* Ambient Brand Halos */}
-      <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#5E4BEE]/[0.05] blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full bg-[#5E4BEE]/[0.05] blur-[100px] pointer-events-none -z-10" />
 
       {/* Centered 75% Width Container */}
-      <div className="relative w-[90%] max-w-[1440px] mx-auto z-10 flex flex-col h-full justify-between gap-6">
+      <div className="relative w-[90%] max-w-[1440px] mx-auto z-10 flex flex-col md:h-full md:justify-between gap-6">
 
         {/* ── TOP SECTION HEADER ── */}
         <div
@@ -80,7 +80,7 @@ export default function SafetySection() {
               <span className="font-semibold text-zinc-300">/ 03</span>
               <span>Our Commitment</span>
             </div>
-            <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl uppercase tracking-tight text-white leading-[1.05]">
+            <h2 className="font-display font-extrabold text-xl sm:text-3xl lg:text-4xl uppercase tracking-tight text-white leading-[1.1] sm:leading-[1.05]">
               A Community Where Respect Comes First
             </h2>
           </div>
@@ -89,7 +89,7 @@ export default function SafetySection() {
         </div>
 
         {/* ── BENTO GRID ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 flex-1 min-h-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:flex-1 md:min-h-0">
           {cards.map((item, idx) => {
 
             // Staggered animation delays based on index
@@ -99,7 +99,7 @@ export default function SafetySection() {
               return (
                 <div
                   key={idx}
-                  className={`group relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-md h-[140px] md:h-full transition-all duration-1000 ease-out ${item.span} ${isInView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'
+                  className={`group relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-md h-[160px] sm:h-[200px] md:h-full transition-all duration-1000 ease-out ${item.span} ${isInView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'
                     }`}
                   style={{ transitionDelay: delay }}
                 >
@@ -117,7 +117,7 @@ export default function SafetySection() {
             return (
               <div
                 key={idx}
-                className={`group relative bg-[#131317] hover:bg-[#17171D] rounded-2xl border border-zinc-800/90 hover:border-zinc-700 p-4 sm:p-5 flex flex-col justify-between h-[140px] md:h-full transition-all duration-1000 ease-out shadow-md ${item.span} ${isInView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'
+                className={`group relative bg-[#131317] hover:bg-[#17171D] rounded-2xl border border-zinc-800/90 hover:border-zinc-700 p-4 sm:p-5 flex flex-col justify-between min-h-[120px] sm:min-h-[140px] md:h-full transition-all duration-1000 ease-out shadow-md ${item.span} ${isInView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'
                   }`}
                 style={{ transitionDelay: delay }}
               >
@@ -129,11 +129,11 @@ export default function SafetySection() {
                 </div>
 
                 {/* Card Content */}
-                <div className="my-auto pt-2">
+                <div className="mt-3 md:my-auto md:pt-2">
                   <h3 className="font-display font-bold text-sm sm:text-base uppercase tracking-wider text-white mb-1 group-hover:text-zinc-100 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-[10px] sm:text-xs text-zinc-400 font-normal leading-snug line-clamp-2">
+                  <p className="text-[11px] sm:text-xs text-zinc-400 font-normal leading-snug sm:line-clamp-2">
                     {item.desc}
                   </p>
                 </div>

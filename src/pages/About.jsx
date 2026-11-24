@@ -46,6 +46,7 @@ function useParallax(speed = 0.05) {
 export default function About() {
   const heroReveal = useScrollReveal();
   const storyReveal = useScrollReveal();
+  const storyNarrativeReveal = useScrollReveal();
   const foundersReveal = useScrollReveal();
   const principlesReveal = useScrollReveal();
   const corporateReveal = useScrollReveal();
@@ -57,35 +58,30 @@ export default function About() {
       name: 'Kanishk Kashyap',
       role: 'Director, CEO & Founder',
       dept: 'Product Architecture & Vision',
-      image: '/assets/founder-1.jpg',
       quote: "We built WeHere so no one ever has to struggle in silence. A calm, grounded space built on empathy, dignity, and zero judgment."
     },
     {
       name: 'Nailah Istifa',
       role: 'Co-founder & COO',
       dept: 'Operations & Community Safety',
-      image: '/assets/founder-2.jpg',
       quote: "Our priority is ensuring our community is genuinely safe and dignified. Strict conduct standards so no one feels unsafe reaching out."
     },
     {
       name: 'Ruchita',
       role: 'CTO',
       dept: 'Platform Architecture & Engineering',
-      image: '/assets/amber-photo.jpg',
       quote: "Building resilient, secure peer infrastructure where every voice is protected and latency never stands in the way of human support."
     },
     {
       name: 'Karan Sharma',
       role: 'Co-founder & CMO',
       dept: 'Brand Strategy & Growth',
-      image: '/assets/guy-portrait.jpg',
       quote: "Normalizing empathetic peer support across colleges and young adults. Making genuine listening as accessible as opening your phone."
     },
     {
       name: 'Srishti Gautam',
-      role: 'CMO ',
+      role: 'CMO',
       dept: 'Statutory Redressal & Outreach',
-      image: '/assets/founder-3.jpg',
       quote: "Everyday stress begins much earlier, and what helps early on is having someone safe, trustworthy, and empathetic to talk to."
     }
   ];
@@ -111,6 +107,14 @@ export default function About() {
       title: 'Privacy & Data Control',
       desc: "No precise GPS location tracking, automatic photo metadata scrubbing, and complete self-serve account deletion under India's DPDP Act 2023."
     }
+  ];
+
+  const storyLines = [
+    "We believe that people should never have to hide their emotions to feel accepted.",
+    "There is no universal timeline for personal growth. There is no single definition of strength. And there is no shame in asking for support.",
+    "Sometimes, strength means speaking up. Sometimes, it means listening. Sometimes, it simply means taking one day at a time.",
+    "At WeHere, we respect every individual's journey.",
+    "We believe in empathy over judgment, understanding over assumptions, and connection over isolation."
   ];
 
   return (
@@ -165,7 +169,6 @@ export default function About() {
             </div>
 
             {/* Giant Stacked "OUR STORY" - REDUCED BY HALF */}
-            {/* Giant Stacked "OUR STORY" - REDUCED BY HALF */}
             <div
               ref={storyReveal.ref}
               className="pt-2 overflow-hidden"
@@ -182,7 +185,8 @@ export default function About() {
                 OUR<br />
                 STORY
               </h1>
-            </div>          </div>
+            </div>
+          </div>
 
           {/* ── RIGHT COLUMN: DOMINANT PORTRAIT ── */}
           <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
@@ -220,36 +224,54 @@ export default function About() {
         </div>
       </section>
 
+      {/* ── OUR STORY NARRATIVE ── */}
+      <section
+        ref={storyNarrativeReveal.ref}
+        className="relative w-full max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 pb-16 mb-16 border-b border-black/[0.06]"
+      >
+        <div
+          className={`max-w-3xl transition-all duration-1000 ease-out ${storyNarrativeReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
+          <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-zinc-500 font-semibold block mb-4">
+            Our Story
+          </span>
+          <h2 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl uppercase tracking-tighter text-zinc-950 leading-[0.95] mb-8">
+            Everyone Has a Story.<br />
+            <span className="text-[#5E4BEE]">Every Story Matters.</span>
+          </h2>
+
+          <div className="space-y-4 sm:space-y-5">
+            {storyLines.map((line, idx) => (
+              <p
+                key={idx}
+                className={`text-sm sm:text-base text-zinc-600 leading-relaxed font-normal ${idx === 0 ? 'font-medium text-zinc-800' : ''
+                  }`}
+              >
+                {line}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── REST OF ABOUT PAGE ── */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
 
         {/* ── OUR FOUNDERS SECTION ── */}
         <section id="founders" className="mb-24 sm:mb-32" ref={foundersReveal.ref}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-y-12 sm:gap-x-8 sm:gap-y-12 lg:gap-8 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 items-stretch">
 
             {/* BLOCK 1: KANISHK KASHYAP (FEATURE CARD) */}
             <div
               className={`sm:col-span-2 lg:col-span-6 flex flex-col justify-between transition-all duration-1000 ease-out ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
             >
-              <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-6 items-center">
-                <div className="sm:col-span-6 relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
-                  <img
-                    src={founders[0].image}
-                    alt={founders[0].name}
-                    className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[#5E4BEE]/20 mix-blend-multiply pointer-events-none" />
-                </div>
-
-                <div className="sm:col-span-6 flex flex-col justify-center py-2 sm:py-0">
-                  <span className="font-display font-black text-3xl sm:text-4xl lg:text-[2.5rem] uppercase tracking-tight text-zinc-950 leading-[0.92]">OUR</span>
-                  <span className="font-display font-black text-3xl sm:text-4xl lg:text-[2.5rem] uppercase tracking-tight text-[#5E4BEE] leading-[0.92]">EXPERIENCE</span>
-                  <span className="font-display font-black text-3xl sm:text-4xl lg:text-[2.5rem] uppercase tracking-tight text-zinc-950 leading-[0.92] mt-1">OUR</span>
-                  <div className="flex items-center gap-2.5">
-                    <span className="font-display font-black text-3xl sm:text-4xl lg:text-[2.5rem] uppercase tracking-tight text-zinc-950 leading-[0.92]">PRIDE</span>
-                    <span className="w-2.5 h-2.5 bg-[#5E4BEE] shrink-0 inline-block mb-1" />
-                  </div>
+              <div className="flex flex-col justify-center py-2 sm:py-0">
+                <span className="font-display font-black text-3xl sm:text-4xl lg:text-[2.5rem] uppercase tracking-tight text-zinc-950 leading-[0.92]">OUR</span>
+                <span className="font-display font-black text-3xl sm:text-4xl lg:text-[2.5rem] uppercase tracking-tight text-[#5E4BEE] leading-[0.92]">EXPERIENCE</span>
+                <span className="font-display font-black text-3xl sm:text-4xl lg:text-[2.5rem] uppercase tracking-tight text-zinc-950 leading-[0.92] mt-1">OUR</span>
+                <div className="flex items-center gap-2.5">
+                  <span className="font-display font-black text-3xl sm:text-4xl lg:text-[2.5rem] uppercase tracking-tight text-zinc-950 leading-[0.92]">PRIDE</span>
+                  <span className="w-2.5 h-2.5 bg-[#5E4BEE] shrink-0 inline-block mb-1" />
                 </div>
               </div>
 
@@ -265,9 +287,6 @@ export default function About() {
               className={`sm:col-span-1 lg:col-span-3 flex flex-col justify-between transition-all duration-1000 ease-out delay-150 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
             >
               <div>
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
-                  <img src={founders[1].image} alt={founders[1].name} className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
-                </div>
                 <div className="mt-5">
                   <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-tight">{founders[1].name}</h3>
                   <p className="text-[11px] font-mono text-[#5E4BEE] uppercase tracking-wider mb-2">{founders[1].role}</p>
@@ -281,9 +300,6 @@ export default function About() {
               className={`sm:col-span-1 lg:col-span-3 flex flex-col justify-between transition-all duration-1000 ease-out delay-300 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
             >
               <div>
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
-                  <img src={founders[2].image} alt={founders[2].name} className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
-                </div>
                 <div className="mt-5">
                   <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-tight">{founders[2].name}</h3>
                   <p className="text-[11px] font-mono text-[#5E4BEE] uppercase tracking-wider mb-2">{founders[2].role}</p>
@@ -297,9 +313,6 @@ export default function About() {
               className={`sm:col-span-1 lg:col-span-3 flex flex-col justify-between transition-all duration-1000 ease-out delay-150 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
             >
               <div>
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
-                  <img src={founders[3].image} alt={founders[3].name} className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
-                </div>
                 <div className="mt-5">
                   <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-tight">{founders[3].name}</h3>
                   <p className="text-[11px] font-mono text-[#5E4BEE] uppercase tracking-wider mb-2">{founders[3].role}</p>
@@ -313,38 +326,11 @@ export default function About() {
               className={`sm:col-span-1 lg:col-span-3 flex flex-col justify-between transition-all duration-1000 ease-out delay-300 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
             >
               <div>
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 shadow-md group">
-                  <img src={founders[4].image} alt={founders[4].name} className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
-                </div>
                 <div className="mt-5">
                   <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900 leading-tight">{founders[4].name}</h3>
                   <p className="text-[11px] font-mono text-[#5E4BEE] uppercase tracking-wider mb-2">{founders[4].role}</p>
                   <p className="text-xs text-zinc-500 leading-relaxed font-normal">"{founders[4].quote}"</p>
                 </div>
-              </div>
-            </div>
-
-            {/* LEADERSHIP PHILOSOPHY CARD */}
-            <div
-              className={`sm:col-span-2 lg:col-span-6 flex flex-col justify-between p-7 sm:p-9 bg-white border border-zinc-200/90 rounded-2xl shadow-sm transition-all duration-1000 ease-out delay-450 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
-            >
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 bg-[#5E4BEE]" />
-                  <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-400 font-semibold">Leadership Commitment</span>
-                </div>
-                <h3 className="font-display font-black text-2xl sm:text-3xl text-zinc-950 uppercase tracking-tight leading-snug">
-                  Empathetic listening <br />
-                  <span className="text-[#5E4BEE]">engineered</span> for safety.
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed max-w-lg font-normal">
-                  Our multidisciplinary leadership unifies product engineering, community operations, brand awareness, and statutory grievance compliance. Together, we are committed to keeping WeHere a tranquil sanctuary where every voice is heard without fear of judgment.
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-zinc-100 flex items-center justify-between text-xs text-zinc-400 font-mono">
-                <span className="tracking-widest text-[10px]">WeHere Executive Board</span>
-                <span className="text-[#5E4BEE] font-bold">2026</span>
               </div>
             </div>
 

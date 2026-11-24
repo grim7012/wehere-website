@@ -89,9 +89,9 @@ export default function MissionSection() {
           </div>
         </div>
 
-        {/* ── RIGHT SIDE: IMAGE (Animated from Right) ── */}
+        {/* ── RIGHT SIDE: IMAGE (Animated from Right) — Hidden on mobile ── */}
         <div
-          className={`w-full md:w-1/2 relative h-[25vh] md:h-[70vh] min-h-[180px] transition-all duration-1000 ease-out overflow-hidden ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+          className={`hidden md:block md:w-1/2 relative md:h-[70vh] min-h-[180px] transition-all duration-1000 ease-out overflow-hidden ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
             }`}
           style={{ transitionDelay: '150ms' }}
         >

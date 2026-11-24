@@ -73,7 +73,7 @@ export default function RefundPolicy() {
     {
       num: '05',
       title: 'Duplicate Billing & Dispute Resolution',
-      content: 'If you encounter duplicate transactions, technical billing errors, or unauthorized charges, please reach out to our billing desk at billing@wehere.co.in within 7 days with your store receipt for immediate verification and assistance.',
+      content: 'If you encounter duplicate transactions, technical billing errors, or unauthorized charges, please reach out to us.',
       image: '/assets/campus_community.jpg',
       alt: 'Community support representing dispute assistance'
     },
@@ -108,13 +108,11 @@ export default function RefundPolicy() {
             {sections.map((item, idx) => (
               <div
                 key={idx}
-                className={`relative flex flex-col group transition-all duration-1000 ease-out ${
-                  isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-                } ${
-                  idx % 3 === 0 ? 'lg:translate-y-0' :
-                  idx % 3 === 1 ? 'lg:translate-y-16' :
-                  'lg:translate-y-32'
-                }`}
+                className={`relative flex flex-col group transition-all duration-1000 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                  } ${idx % 3 === 0 ? 'lg:translate-y-0' :
+                    idx % 3 === 1 ? 'lg:translate-y-16' :
+                      'lg:translate-y-32'
+                  }`}
                 style={{ transitionDelay: `${idx * 150}ms` }}
               >
                 {/* Ghost Number */}
@@ -149,11 +147,6 @@ export default function RefundPolicy() {
         </div>
 
         {/* Support Help Desk Notice */}
-        <div className="mt-24 pt-8 border-t border-black/[0.06] text-xs text-zinc-500 space-y-1">
-          <p className="font-bold text-zinc-800">Billing Help Desk & Purchase Support</p>
-          <p>Inquiries and duplicate charge investigations: <a href="mailto:billing@wehere.co.in" className="text-[#5E4BEE] underline">billing@wehere.co.in</a></p>
-          <p>WeHere Networks Private Limited • CIN: U63122UP2026PTC253594 • Lucknow, UP 226016, India</p>
-        </div>
 
         {/* Bottom hairline */}
         <div className="absolute inset-x-0 bottom-0 h-px bg-black/[0.04]" />
